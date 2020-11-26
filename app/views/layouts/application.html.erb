@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nanzaness</title>
+    <meta charset="utf-8">
+    <!-- 古いInternet Explorerでデザインが崩れるのを防ぐ-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!---幅をデバイスの幅に合わせてレスポンシブデザインにする-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NanzanESS</title>
+    <!--セキュリティ対策(WebAppliction作成時のdefault)-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!--アニメーションを付けるため-->
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!--CSS, Javascriptの両方を読み込む(WebAppliction作成時のdefault)-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Bootstrapに必要-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    <!--VueCarouselの使用に必要-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bangers rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+
+    <div class="container">
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
+      <!--トップに戻るボタン-->
+      <div id="back-to-top"><a href="#"></a></div>
+    </div>
   </body>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col 14 offset-12 s12">
+          <div class="collection">
+            <div class="col s6"><a class="collection-item" href="">Home</a></div>
+            <div class="col s6"><a class="collection-item" href="">Section</a></div>
+            <div class="col s6"><a class="collection-item" href="">Event</a></div>
+            <div class="col s6"><a class="collection-item" href="">Q&A</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 NanzanUniversity ESS. ALL RIGTS RESERVED.
+      </div>
+    </div>
+  </footer>
+
 </html>

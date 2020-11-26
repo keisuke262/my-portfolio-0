@@ -1,0 +1,48 @@
+<header class="mb-4">
+    <!-- 576px以上の画面幅のとき、メニューを表示する（それ未満なら折りたたむ）指定を追加 -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <!-- 画面左上に表示するサイト名のリンクとして適切な表示をするための指定を追加 -->
+        <a class="navbar-brand" href="/">NanzanESS
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon">
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <% if logged_in? %>
+                    <li class="nav-item"><%= link_to 'Users', users_path, class: 'nav-link' %></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+                        <ul class="dropdown-menu dropdown-menu-right">  
+                            <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+
+                        </ul>
+                    </li>
+                <% else %>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Section</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Certification</a>
+                            <a class="dropdown-item" href="#">Guide</a>
+                            <a class="dropdown-item" href="#">Debate</a>
+                            <a class="dropdown-item" href="#">Drama</a>
+                            <a class="dropdown-item" href="#">Speech</a>
+                            <a class="dropdown-item" href="#">Discussion</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Event</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">お問い合わせ</a></li>
+                    <li class="nav-item"><a href="https://www.instagram.com/nanzan_ess/" class="btn-social-icon-instagram nav-link">
+                    <span class="btn-social-icon-instagram__square"><i class="fab fa-instagram fa-fw"></i></span>
+                    @nanzan_ess
+                    </a></li>
+                    <li class="nav-item"><%= link_to 'Sign up', signup_path, class: 'nav-link' %></li>
+                    <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+                <% end %>
+            </ul>
+        </div>
+    </nav>
+</header>
