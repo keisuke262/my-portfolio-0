@@ -1,9 +1,8 @@
 <header class="mb-4">
-    <!-- 576px以上の画面幅のとき、メニューを表示する（それ未満なら折りたたむ）指定を追加 -->
+    <!-- 576px以上の画面幅(sm)のとき、メニューを表示する（それ未満なら折りたたむ）指定を追加 -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <!-- 画面左上に表示するサイト名のリンクとして適切な表示をするための指定を追加 -->
-        <a class="navbar-brand" href="/">NanzanESS
-        </a>
+        <a class="navbar-brand" href="/">NanzanESS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon">
         </button>
@@ -39,7 +38,6 @@
                     <span class="btn-social-icon-instagram__square"><i class="fab fa-instagram fa-fw"></i></span>
                     @nanzan_ess
                     </a></li>
-                    <li class="nav-item"><%= link_to 'Sign up', signup_path, class: 'nav-link' %></li>
                     <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
                 <% end %>
             </ul>
