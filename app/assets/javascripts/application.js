@@ -12,5 +12,14 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function() {
+    $('.slider').slick({
+        //dots: true,
+        autoplay: true,
+        adaptiveHeight: true
+    });
+});

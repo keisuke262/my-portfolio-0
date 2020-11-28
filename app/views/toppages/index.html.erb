@@ -1,10 +1,30 @@
 <!--slickによるカルーセル-->
-<div class="previews">
-    <div class="slider">
-        <%= image_tag 'debate.jpg' %>
-        <%= image_tag 'guide.jpg' %>
-        <%= image_tag 'party1.jpg' %>
-    </div>
+<div class="slider mt-0">
+    <%= image_tag 'debate' %>    
+    <%= image_tag 'guide' %>
+    <%= image_tag 'drama' %>
+    <%= image_tag 'question' %>
+    <%= image_tag 'speech' %>
 </div>
+<!--card-deckクラスで複数のカードを連結しないで表示できる-->
+<div class="card-deck mt-5">
+    <div class="card shadow">
+        <%= image_tag 'aptitude-test' %>
+        <div class="card-body">
+            <h5 class="card-title pt-3">セクション体験したい方はこちら</h5>
+            <p class="card-text text-muted">南山大学生の方のみになります。</p>
+        </div>
+    </div> 
+    <div class="card shadow">
+        <%= image_tag 'aptitude-test' %>
+        <div class="card-body">
+            <h5 class="card-title pt-3">適正セクションを診断する</h5>
+            <p class="card-text text-muted">いくつかの質問に答えることで、あなたに適性のあるセクションを知ることができます。</p>
+        </div>
+    </div>
+</div> 
+<h5 class="text-center mt-5 mb-5">セクション</h5>
+    
 
-<h2>セクション</h2>
+
+
