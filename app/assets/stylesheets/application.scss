@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "slick-theme";
+ @import "slick";
+ 
+.slick-slide {
+   outline: none;
+}
+
+ .slide-arrow{
+   position: absolute;
+   top: 50%;
+   margin-top: -50px;
+ }
+
+ 
+ .prev-arrow{
+   left: -50px;
+   width: 0;
+   height: 0;
+   border-left: 0 solid transparent;
+   border-right: 15px solid black;
+   border-top: 10px solid transparent;
+   border-bottom: 10px solid transparent;
+ }
+ .prev-arrow:hover {
+   left: -50px;
+   width: 0;
+   height: 0;
+   border-left: 0 solid transparent;
+   border-right: 15px solid #0F0;
+   border-top: 10px solid transparent;
+   border-bottom: 10px solid transparent;
+ }
+
+ .next-arrow{
+   right: -50px;
+   width: 0;
+   height: 0;
+   border-right: 0 solid transparent;
+   border-left: 15px solid black;
+   border-top: 10px solid transparent;
+   border-bottom: 10px solid transparent;
+ }
+
+ .next-arrow:hover {
+   right: -50px;
+   width: 0;
+   height: 0;
+   border-right: 0 solid transparent;
+   border-left: 15px solid #0F0;
+   border-top: 10px solid transparent;
+   border-bottom: 10px solid transparent;
+ }
+
+ .carousel{
+
+   margin: 0 auto;
+   img{
+     width: 100%;
+   }
+ }
+
+ .multiple{
+   
+   margin: 0 auto;
+   img{
+     width: 100%;
+   }
+ }
+
+ 
+
+button{
+   margin: 0;
+   padding: 0;
+   background: none;
+   border: none;
+   border-radius: 0;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   outline: none
+
+ }
+
+ button:focus {
+    outline:0;
+ }
+
+ 
