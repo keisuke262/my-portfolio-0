@@ -102,7 +102,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-    left: 50px; /*変更箇所*/
+    left: -25px; /*変更箇所*/
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -116,7 +116,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: 50px;　/*変更箇所*/
+    right: -25px;　/*変更箇所*/
     [dir="rtl"] & {
         left: -25px;
         right: auto;

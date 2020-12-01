@@ -1,0 +1,2 @@
+class SpeechsectionsController < ApplicationController
+end
