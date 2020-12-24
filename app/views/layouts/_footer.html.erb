@@ -1,15 +1,57 @@
-<footer class="flex-rw">
-  
+<footer class="flex-rw" id="stopper footer_bar">
   <ul class="footer-list-top">
     <li><h4 class="footer-list-header">セクション</h4></li>
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Certification</a></li>
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Guide</a></li>
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Debate</a></li>
-
-    <li><a href='/' itemprop="significantLink" class="generic-anchor footer-list-anchor">Drama</a></li>
-
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Speech</a></li>
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Discussion</a></li>
+    <li><%= link_to certification_section_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    Certification
+    <% end %></li>
+    <li><%= link_to guide_section_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    Guide
+    <% end %></li>
+    <li><%= link_to debate_section_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    Debate
+    <% end %></li>
+    <li><%= link_to drama_section_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    Drama
+    <% end %></li>
+    <li><%= link_to speech_section_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    Speech
+    <% end %></li>
+    <li><%= link_to discussion_section_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    Discussion
+    <% end %></li>
+  </ul>
+  <ul class="footer-list-top">
+    <li><h4 class="footer-list-header">全体のイベント</h4></li>
+    <li><%= link_to spring_camp_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    春キャンプ
+    <% end %></li>
+    <li><%= link_to freshman_welcome_party_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    新歓
+    <% end %></li>
+    <li><%= link_to jounan_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    上南戦
+    <% end %></li>
+    <li><%= link_to summer_camp_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    サマーキャンプ
+    <% end %></li>
+    <li><%= link_to halloween_party_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    ハロウィンパーティー
+    <% end %></li>
+    <li><%= link_to nanzan_festival_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    学祭
+    <% end %></li>
+    <li><%= link_to christmas_party_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    クリスマスパーティー
+    <% end %></li>
+    <li><%= link_to farewell_party_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    追いコン
+    <% end %></li>
+  </ul>
+  <ul class="footer-list-top">
+    <li id='help'>
+      <h4 class="footer-list-header">セクション体験</h4></li>
+    <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor" itemprop="significantLink">お問い合わせ</a></li>
+    <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">適正セクション診断</a></li>
   </ul>
   <ul class="footer-list-top">
     <li id='help'>
@@ -19,28 +61,6 @@
     <li id='find-a-store'><a href='/shop/store-locator' class="generic-anchor footer-list-anchor" itemprop="significantLink">3(Drama)</a></li>
     <li id='user-registration'><a href='/shop/user-registration?URL=' class="generic-anchor footer-list-anchor" itemprop="significantLink">1(Debate)</a></li>
     <li id='order-tracking'><a href='/shop/order-status' itemprop="significantLink" class="generic-anchor footer-list-anchor">2(Debate)</a></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li id='help'>
-      <h4 class="footer-list-header">セクション体験</h4></li>
-    <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor" itemprop="significantLink">お問い合わせ</a></li>
-    <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">適正セクション診断</a></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li id='help'><h4 class="footer-list-header">セクションキャンプ</h4></li>
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Guide</a></li>
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Debate</a></li>
-
-    <li><a href='/' itemprop="significantLink" class="generic-anchor footer-list-anchor">Drama</a></li>
-
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Speech</a></li>
-    <li><a href='/' class="generic-anchor footer-list-anchor" itemprop="significantLink">Discussion</a></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li id='help'><h4 class="footer-list-header">Guideイベント</h4></li>
-    <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor" itemprop="significantLink">BFG
-    <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">BPG</a></li>
-    <li id='find-a-store'><a href='/shop/store-locator' class="generic-anchor footer-list-anchor" itemprop="significantLink">Guide Contest</a></li>
   </ul>
   <ul class="footer-list-top">
     <li>
@@ -64,4 +84,5 @@
  2020 NanzanUniversity ESS<span class="footer-bottom-rights"> - All Rights Reserved - </span>
     </div>
   </section>
+
 </footer>

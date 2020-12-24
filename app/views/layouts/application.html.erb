@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!---幅をデバイスの幅に合わせてレスポンシブデザインにする-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="文書の説明は検索エンジンの検索結果ページに表示されるため、タイトルと並びSEO上非常に重要です。">
     <title>NanzanESS</title>
     <!--セキュリティ対策(WebAppliction作成時のdefault)-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <!--アニメーションを付けるため-->
-    <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <!--CSS, Javascriptの両方を読み込む(WebAppliction作成時のdefault)-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -21,14 +20,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
-    <!--VueCarouselの使用に必要-->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Bangers rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
     <!--slick(カルーセル実装)を使えるようにするため⇒bodyでも他に読み込むものがある-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!--FontAwesomを使うため-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -37,7 +30,7 @@
   <body>
     <%= render 'layouts/navbar' %>
 
-    <div class="container">
+    <div class="container" id="content_border">
       <%= render 'layouts/flash_messages' %>
       <%= yield %>
       <!--トップに戻るボタン-->
@@ -67,13 +60,5 @@
         slidesToScroll: 3
       });
     </script>
-    
   </body>
 </html>
-
-
-  
-
-</html>
-
-

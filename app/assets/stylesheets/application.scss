@@ -14,14 +14,456 @@
  *= require_self
  */
 
- p {
-    line-height: 1.9
+
+// 基本設定 文字の大きさはhtmlのfont-size: 10px;を基準にremで設定
+ html {
+   font-size: 10px;
+ }
+
+ body {
+   background-color: #F5F5F5;
+   line-height: 1.9;
+   margin: 0 auto;
+   padding: 0;
+   min-width: 1000px;
+   font-size: 2.2rem;
+   font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック'
+                  ,YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+ }
+
+ @media only screen and (max-width: 576px) {
+  // ウィンドウ幅が576px以下の時に適用される
+ body {
+  background-color: white;
  }
  
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 4.5rem;
+  //background-color: white;
+  //padding-left: 1.5rem;
+  //padding-right: 1.5rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+ }
+
+#main {
+  background-color: white;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+ //width: 66.6667%;
+  //margin-top: 5rem;
+  //margin-bottom: 5rem;
+  
+}
+
+#sidebar {
+  //padding-right: 30px;
+  padding: 30px;
+}
+
+@media only screen and (min-width: 992px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .navbar-expand-sm .navbar-nav .nav-link {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    padding: 0 2rem;
+  }
+ 
+}
+
+@media only screen and (min-width: 992px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  
+.navbar-dark .navbar-brand {
+  margin-left: 20rem;
+}
+  
+ 
+}
+
+
+@media only screen and (min-width: 992px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .login-nav {
+    margin-right: 20rem;
+  }
+
+}
+
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .navbar-expand-sm .navbar-nav .nav-link {
+    margin-right: 4.1rem;
+    margin-left: 0.1rem;
+    padding: 0 0.1rem;
+  }
+ 
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  
+.navbar-dark .navbar-brand {
+  margin-left: 4.1rem;
+}
+  
+ 
+}
+
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .login-nav {
+    margin-right: 4.1rem;
+  }
+
+}
+
+
+
+
+
+
+ p {
+  line-height: 1.9;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 3.3rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 50px 0 30px;
+}
+
+h3 {
+  font-size: 2.8rem;
+  margin: 0 10px 30px;
+}
+
+.navbar-brand {
+  font-size: 2.8rem;
+}
+
+.col-sm-8 {
+  width: 66.66667%;
+}
+
+.col-sm-4 {
+  width: 33.33333%;
+}
+
+
+
+
+.pt-6 {
+  padding-top: 50px;
+}
+
+.pb-6 {
+  padding-bottom: 50px;
+}
+
+
+ 
+
+ 
+
+ .card a {
+   color: #00BFFF;
+ }
+
+ .card a:visited {
+  color: #00BFFF;
+ }
+
+ 
+.card a:hover {
+  color: #00BFFF;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+ a {
+  color: #00BFFF;
+}
+
+a:visited {
+  color: #00BFFF;
+}
+
+a:hover {
+  color: #00BFFF;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.black {
+  color: black;
+}
+
+
+
+/* liのhober時にマウスポインタ―を付ける */
+li {
+  cursor: pointer;
+  color: #00BFFF;
+}
+
+
+
+.active .side-letter {
+  font-weight: 700;
+  color: #0066FF;
+}
+
+.mt-4{
+  margin-top: 3rem!important;
+}
+
+
+.mt-5 {
+  margin-top: 4rem!important;
+}
+
+.side-letter {
+  color: #00BFFF;
+  cursor: pointer;
+}
+
+
+ @media only screen and (min-width: 0px) {
+   // ウィンドウ幅が0px以上の時に適用される
+  h5 {
+    font-size: 4rem;
+  }
+ }
+
+ @media only screen and (min-width: 576px) {
+   // ウィンドウ幅が576px以上の時に適用される
+  h5 {
+    font-size: 2.3rem;
+  }
+ }
+
+ @media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+ .mb-5 {
+   margin-bottom: -2rem!important;
+ }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+ .mb-5 {
+  margin-bottom: -1rem!important;
+ }
+}
+
+// トップページ下部の複数枚カルーセルの間の余白の大きさの設定
+.multiple a {
+  padding: 2px 23px;
+}
+
+// cardに関する設定
+.card {
+  border: 0;
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+ .card  {
+   margin-top: 50px;
+ }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+ .card {
+   margin-top: 25px;
+ }
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+ .btn  {
+   font-size: 25px;
+ }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+ .btn {
+   font-size: 1rem;
+ }
+}
+
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+ .card-text {
+   font-size: 3rem;
+
+ }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+ .card-text {
+   font-size: 2rem;
+ }
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+ .card-text:last-child  {
+   margin-bottom: 24px;
+ }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .card-text:last-child  {
+    margin-bottom: 8px;
+ }
+}
+
+// ドロップダウンの文字の設定
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .dropdown-item {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .dropdown-item {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .nav-link {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .nav-link {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+/* サイドページの設定=固定 
+@media only screen and (min-width: 768px) {
+  // ウィンドウ幅が768px以上の時に適用される
+  // iPad・タブレット用
+  #sidebar {
+    //position: fixed;
+    bottom: 30rem;
+    //right: 15rem;
+ }
+}
+
+
+@media only screen and (min-width: 800px) {
+  // ウィンドウ幅が800px以上の時に適用される
+  // iPadPro用
+  #sidebar {
+    //position: fixed;
+    bottom: 30rem;
+    //right: 10rem;
+    //width: 33.33333%;
+ }
+}
+
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が1024px以上の時に適用される
+  #sidebar {
+    //position: fixed;
+    bottom: 2.5rem;
+    //right: 25rem;
+    //width: 33.33333%;
+  
+  }
+}
+
+*/
+
+
+#sidebar a {
+  font-size: 1.8rem;
+}
+
+
+@media (max-width: 575px) {
+  /* ウインドウ幅500px以下の時に適用されるスタイル */
+  #sidebar {
+    //display: none;
+    opacity: 0;
+   }
+
+}
+
+
+
+@media (min-width: 0px) {
+  /* ウインドウ幅500px以下の時に適用されるスタイル */
+  
+/* navの設定=固定 */
+.navbar {
+  position: fixed;
+  position: -webkit-fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.8rem;
+ }
+}
+
+
+
+
+@media (min-width: 576px) {
+  /* ウインドウ幅500px以下の時に適用されるスタイル */
+  
+/* navの設定=固定 */
+.navbar {
+  position: fixed;
+  position: -webkit-fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem;
+ }
+}
+
+/* slickによるカルーセルの設定 */
 
  @import "slick-theme";
  @import "slick";
+
  
+
+
 .slick-slide {
    outline: none;
 }
@@ -313,160 +755,22 @@ button{
  }
  
 
- /* セクションの見出し部分 */
+ /* セクションの大見出し部分 */
 
- 
- /* Certificationセクションの見出し部分 */
+ h2 {
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+}
 
- .certification h1 {
-   position: relative;
-   color: #158b2b;
-   font-size: 50px;
-   padding: 10px 0;
-   text-align: center;
-   margin: 1.5em 0;
- }
+/* セクションの小見出し部分 */
 
-.certification  h1:before {
-   content: "";
-   position: absolute;
-   top: -17px;
-   left: 50%;
-   width: 413px;
-   height: 120px;
-   border-radius: 50%;
-   border: 3px solid #a6ddb0;
-   border-left-color: transparent;
-   border-right-color: transparent;
-   -webkit-transform: translateX(-50%);
-   transform: translateX(-50%);
- }
-
-
-
- /* セクションの見出し部分 */
-
- .guide h1 {
-   position: relative;
-   color: #2C7CFF;
-   font-size: 50px;
-   padding: 10px 0;
-   text-align: center;
-   margin: 1.5em 0;
- }
- .guide h1:before {
-   content: "";
-   position: absolute;
-   top: -17px;
-   left: 50%;
-   width: 413px;
-   height: 120px;
-   border-radius: 50%;
-   border: 3px solid #2C7CFF;
-   border-left-color: transparent;
-   border-right-color: transparent;
-   -webkit-transform: translateX(-50%);
-   transform: translateX(-50%);
- }
-
- 
- /* Debateセクションの見出し部分 */
- .debate h1 {
-   position: relative;
-   color: #CC0000;
-   font-size: 50px;
-   padding: 10px 0;
-   text-align: center;
-   margin: 1.5em 0;
- }
-
- .debate h1:before {
-   content: "";
-   position: absolute;
-   top: -17px;
-   left: 50%;
-   width: 413px;
-   height: 120px;
-   border-radius: 50%;
-   border: 3px solid #CC0000;
-   border-left-color: transparent;
-   border-right-color: transparent;
-   -webkit-transform: translateX(-50%);
-   transform: translateX(-50%);
- }
-
- /* Dramaセクションの見出し部分 */
- .drama h1 {
-   position: relative;
-   color: #FFFF77;
-   font-size: 50px;
-   padding: 10px 0;
-   text-align: center;
-   margin: 1.5em 0;
- }
-
- .drama h1:before {
-   content: "";
-   position: absolute;
-   top: -17px;
-   left: 50%;
-   width: 413px;
-   height: 120px;
-   border-radius: 50%;
-   border: 3px solid #FFFF77;
-   border-left-color: transparent;
-   border-right-color: transparent;
-   -webkit-transform: translateX(-50%);
-   transform: translateX(-50%);
- }
-
- /* Speechセクションの見出し部分 */
- .speech h1 {
-   position: relative;
-   color: #87CEFA;
-   font-size: 50px;
-   padding: 10px 0;
-   text-align: center;
-   margin: 1.5em 0;
- }
-
- .speech h1:before {
-   content: "";
-   position: absolute;
-   top: -17px;
-   left: 50%;
-   width: 413px;
-   height: 120px;
-   border-radius: 50%;
-   border: 3px solid #87CEFA;
-   border-left-color: transparent;
-   border-right-color: transparent;
-   -webkit-transform: translateX(-50%);
-   transform: translateX(-50%);
- }
-
- /* Discussionセクションの見出し部分 */
- .discussion h1 {
-   position: relative;
-   color: #696969;
-   font-size: 50px;
-   padding: 10px 0;
-   text-align: center;
-   margin: 1.5em 0;
- }
-
- .discussion h1:before {
-   content: "";
-   position: absolute;
-   top: -22px;
-   left: 50%;
-   width: 480px;
-   height: 132px;
-   border-radius: 50%;
-   border: 3px solid #696969;
-   border-left-color: transparent;
-   border-right-color: transparent;
-   -webkit-transform: translateX(-50%);
-   transform: translateX(-50%);
- }
+h3 {
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #7db4e6;/*左線*/
+}
 

@@ -1,0 +1,97 @@
+
+    
+<!--wrapperここから-->
+<div id="wrapper" class="row">
+    <!--ここからメイン-->
+    <div id="main" class="col-12 col-sm-8">
+        
+        <h1 class="mt-4 pb-6 pt-6 text-center">お問い合わせ</h1>
+        <p class="mt-4 text-center">お問い合わせの内容は、受付日から3営業日以内をめどにご返信いたします。</p>
+        <!--formのaction属性でformの送信先を指定している-->
+        <!--modelで指定した今回でいうと@inquiryのinquiriesがactionに指定されることになる-->
+        <%= form_with model: @inquiry do |f| %>
+        <!--f.objectには@inquiryが代入されている-->
+        <%= render 'layouts/error_messages', model: f.object %>
+        <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <%= f.label :name, '氏名' %>
+            </div>
+            <div class="col-sm-7">
+                <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <%= f.label :email, 'メールアドレス'%>
+            </div>
+            <div class="col-sm-7">
+                <%= f.email_field :email, class: 'form-control'%>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <%= f.label :section, '希望セクション'%>
+            </div>
+            <div class="col-sm-7">
+                <%= f.select :section, [['Certification','Certification'], ['Guide','Guide'],['Debate','Debate'],
+                ['Speech','Speech'],['Discussion','Discussion'],['未定(相談したい)','未定(相談したい)']], 
+                { include_blank: '選択してください' }, { class: 'form-control ' } %>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <%= f.label :date, '希望日' %>
+            </div>
+            <div class="col-sm-7">
+                <%= f.date_field :date, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <%= f.label :time, '希望時間' %>
+            </div>
+            <div class="col-sm-7">
+                <%= f.time_field :time, class: 'form-control '%>
+            </div>
+        </div>
+        <div class="form-group row pb-3">
+            <div class="col-sm-4">
+                <%= f.label :message, 'メッセージ' %>
+            </div>
+            <div class="col-sm-7">
+                <%= f.text_field :message, class: 'form-control '%>
+            </div>
+        </div>
+        <div class="form-group row pb-6">
+            <!--<div class="offset-sm-3 col-sm-9">-->
+            <!-- 送信ボタンを緑色にする設定を追加 -->
+            <!-- さらに、送信ボタンは、指定のカラム幅に対して100％の幅となる設定を追加 -->
+            <div class="offset-sm-4 col-sm-7">
+                <%= f.submit '送信', class: 'btn btn-success btn btn-block pt-3 pb-3' %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <!--メインここまで-->
+    <!--ここからサイド-->
+    <aside id="sidebar" class="col-sm-4">
+     <div id="sidebar_sub">
+        <div class="card">
+            <div class="card-header">
+                セクション情報
+            </div>
+            <div class="card-body">
+                <div><%= link_to '・Certificationセクション', certification_section_path, class: 'side-letter' %></div>
+                <div><%= link_to '・Guideセクション', guide_section_path, class: 'side-letter' %></div>
+                <div><%= link_to '・Debateセクション', debate_section_path, class: 'side-letter' %></div>
+                <div><%= link_to '・Dramaセクション', drama_section_path, class: 'side-letter' %></div>
+                <div><%= link_to '・Speechセクション', speech_section_path, class: 'side-letter' %></div>
+                <div><%= link_to '・Discussionセクション', discussion_section_path, class: 'side-letter' %></div>
+            </div>
+        </div>
+     </aside>
+    <!--サイドここまで-->
+</div>
+ <!--wrapperここまで-->
+

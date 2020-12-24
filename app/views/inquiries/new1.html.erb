@@ -1,0 +1,62 @@
+
+    
+        <h1 class="mt-4 pb-4 text-center">お問い合わせ</h1>
+
+        <!-- グリッドを使うための指定を追加 -->
+        <div class="mt-4 row">
+            <!-- 576px以上の画面幅のとき、左側は3つ分のカラム幅で表示する指定を追加 -->
+            <div class="col-sm-3">
+                <!-- メールに関するFont Awesomeのアイコンを追加 -->
+                <i class="far fa-envelope"></i><strong>メール：</strong>
+            </div>
+
+            <!-- 576px以上の画面幅のとき、右側は9つ分のカラム幅で表示する指定を追加 -->
+            <div class="col-sm-9">
+                <p>
+                    プライバシーポリシーをご確認いただき、ご同意の上で、送信ボタンをクリックしてください。<br />
+                    お問い合わせの内容は、受付日から3営業日以内をめどにご返信いたします。
+                </p>
+                <!--formのaction属性でformの送信先を指定している-->
+                <!--modelで指定した今回でいうと@inquiryのinquiriesがactionに指定されることになる-->
+                <!--local: trueがないとページ遷移しない通信が発生する。-->
+                <!--今回はページ遷移があるのでlocal: trueは必要である-->
+                <%= form_with model: @inquiry do |f| %>
+                    <!--f.objectには@contactが代入されている-->
+                    <%= render 'layouts/error_messages', model: f.object %>
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+                    <div class="form-group row">
+                        <%= f.label :name, '氏名', class: 'col-sm-3' %>
+                        <%= f.text_field :name, class: 'form-control col-sm-9' %>
+                    </div>
+                    <div class="form-group row">
+                        <%= f.label :email, 'メールアドレス', class: 'col-sm-3' %>
+                        <%= f.email_field :email, class: 'form-control col-sm-9'%>
+                    </div>
+                    <div class="form-group row">
+                        <%= f.label :section, '希望セクション', class: 'col-sm-3'%>
+                        <%= f.select :section, { 'Certification': 1, 'Guide': 2, 'Debate': 3, 'Drama': 4, 'Speech': 5, 'Discussion': 6, '未定(相談したい)': 7 }, 
+                        { include_blank: '選択してください' }, { class: 'form-control col-sm-9', required: true } %>
+                    </div>
+                    <div class="form-group row">
+                        <!--date_field_tagやdate_selectもある-->
+                        <%= f.label :date, '希望日', class: 'col-sm-3' %>
+                        <%= f.date_field :date, class: 'form-control col-sm-9'%>
+                    </div>
+                    <div class="form-group row">
+                    <%= f.label :time, '希望時間', class: 'col-sm-3' %>
+                        <%= f.time_field :time, class: 'form-control col-sm-9'%>
+                    </div>
+                    <div class="form-group row">
+                        <%= f.label :message, 'メッセージ', class: 'col-sm-3' %>
+                        <%= f.text_field :message, class: 'form-control col-sm-9'%>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-3 col-sm-9">
+                            <!-- 送信ボタンを緑色にする設定を追加 -->
+                            <!-- さらに、送信ボタンは、指定のカラム幅に対して100％の幅となる設定を追加 -->
+                            <%= f.submit '送信', class: 'btn btn-success btn-block' %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>

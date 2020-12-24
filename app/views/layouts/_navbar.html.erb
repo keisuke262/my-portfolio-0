@@ -1,4 +1,4 @@
-<header class="mb-4">
+<header class="mb-4" id="header_bar">
     <!-- 576px以上の画面幅(sm)のとき、メニューを表示する（それ未満なら折りたたむ）指定を追加 -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <!-- 画面左上に表示するサイト名のリンクとして適切な表示をするための指定を追加 -->
@@ -22,24 +22,40 @@
                     </li>
                 <% else %>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Section</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">セクション</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Certification</a>
-                            <a class="dropdown-item" href="#">Guide</a>
-                            <a class="dropdown-item" href="#">Debate</a>
-                            <a class="dropdown-item" href="#">Drama</a>
-                            <a class="dropdown-item" href="#">Speech</a>
-                            <a class="dropdown-item" href="#">Discussion</a>
+                            <%= link_to certification_section_path, class: 'dropdown-item' do %>
+                            Certification
+                            <% end %>
+                            <%= link_to guide_section_path, class: 'dropdown-item' do %>
+                            Guide
+                            <% end %>
+                            <%= link_to debate_section_path, class: 'dropdown-item' do %>
+                            Debate
+                            <% end %>
+                            <%= link_to speech_section_path, class: 'dropdown-item' do %>
+                            Speech
+                            <% end %>
+                            <%= link_to discussion_section_path, class: 'dropdown-item' do %>
+                            Discussion
+                            <% end %>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="#" class="nav-link">Event</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">お問い合わせ</a></li>
-                    <li class="nav-item"><a href="https://www.instagram.com/nanzan_ess/" class="btn-social-icon-instagram nav-link">
-                    <span class="btn-social-icon-instagram__square"><i class="fab fa-instagram fa-fw"></i></span>
-                    </a></li>
-                    <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+                    <li class="nav-item"><%= link_to 'イベント', event_path, class: 'nav-link' %></li>
+                    <li class="nav-item"><%= link_to 'お問い合わせ', new_inquiry_path, class: 'nav-link' %></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SNS</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="https://www.instagram.com/nanzan_ess/" class="btn-social-icon-instagram nav-link">
+                            <span class="btn-social-icon-instagram__square"><i class="fab fa-instagram fa-fw"></i></span>Instagram</a>
+                            <a class="dropdown-item" href="https://twitter.com/ess2019_" class="generic-anchor mr-1" target="_blank" title="Twitter" itemprop="significantLink"><i class="fab fa-twitter"></i>Twitter</a>
+                            <a class="dropdown-item" href="https://www.youtube.com/channel/UCu2yuaJ-ZYgwiG_0uXakg7g"　class="generic-anchor mr-1" target="_blank" title="Youtube" itemprop="significantLink"><i class="fab fa-youtube"></i>Youtube</a>
+                        </div>
+                    </li>
+                    <li class="nav-item login-nav"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
                 <% end %>
             </ul>
         </div>
     </nav>
 </header>
+

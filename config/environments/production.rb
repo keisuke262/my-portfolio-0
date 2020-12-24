@@ -41,6 +41,9 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
+  # ActionMailerによるメール送信機能の実装に必要な設定
+ 
+
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
@@ -62,8 +65,25 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "nanzaness_#{Rails.env}"
-
-  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  # smtpの詳細設定
+  config.action_mailer.smtp_settings = {
+    # SMTPサーバのホスト名
+    address: 'smtp.gmail.com',
+    port: '587',
+    domain: 'gmail.com',
+    # メール送信時に使用するgmailのアカウント
+    user_name: 'nanzanessnaimu@gmail.com',
+    # メール送信時に使用するgmailのパスワード
+    password: 'mvbolyehmzbemqkj',
+    # 認証方法
+    authentication: 'plain',
+    #authentication: 'plain',
+    # メールの送信にTLS認証を使用するか
+    # TLSは簡単に言うと、送受信しているデータを暗号化する通信手順のこと
+    enable_starttls_auto: true
+  }
+  #config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

@@ -1,0 +1,49 @@
+ <!--wrapperここから-->
+<div id="wrapper" class="row">
+    <!--ここからメイン-->
+    <div id="main" class="col-12 col-sm-8">
+        <h1 class="text-center mt-5">追いコン</h1>
+        <div class="text-center mt-5"><%= image_tag 'Guide10', :width => '100%' %></div>
+        <p class="mt-4">
+        実施時期：例年、２月から３月の間　＊昨年度は２月２５日（火）実施<br>
+開催場所：例年、南山大学のG３０またはフラッテンホール　＊昨年度はフラッテンホール<br>
+目的：ESSを引退される先輩方（主に３年生と４年生）に対し、後輩である１年生と２年生が「今後の活躍を応援し、これまでお世話になった感謝の気持ちを伝えるため」に実施する引退セレモニーである。
+<br>進め方：毎年、ESSの運営班（コミッショナー）が参加者の動向を見ながら、日程や開催場所の決定、備品の貸し出し有無の管理を行い、イベントが上手く進行するよう全体を取り仕切ります。またその際に、各セクションの代表者（チーフ）とも連携しながら進めていきます。
+<br>具体的な内容：５つのセクション（Debate, Speech, Guide, Discussion, Drama）ごとに考えた出し物を、各セクションの現チーフがリーダーとなり、先輩方に披露します。
+<br>2020年度のトラセンでは、
+Debateは１つのmotion(議題)に対して、Government (賛成派)とOpposition(反対派)に分かれ、NA style(North American style)と呼ばれるディベートスタイルで、先輩方に後輩のディベート力の成長を披露しました。専門用語がたくさん出てくる中、流暢な英語で意見を話す姿に、先輩方はとても驚いていました。
+Speechは、先輩方のESS内（特にスピーチ）での歩みを、パワーポイントを活用しながら、全て英語で紹介し、感謝の気持ちを伝えました。また、日頃のスピーチ活動で培ったスピーチ力を披露する良い機会にもなりました。中でも、事前に先輩から頂いたビデオを流した際には、会場一同大いに盛り上がりました。
+Guideは、先輩方のESS内（特にガイド）での歩みを、クイズを交えながら紹介しました。その際に、京都でのセクションキャンプ、白鳥庭園や徳川園へのフィールドトリップ、日頃の活動など、先輩との懐かしい思い出を改めて振り返りました。特にガイドは人数が他のセクションよりも多く、後輩からも先輩からも数え切れないほどたくさんのエピソードが出てきました。
+Dramaは、これまで先輩から教わったことを糧にして、少し短めの英語劇を舞台上で披露しました。準備期間が十分ではなかったものの、今できる最高の劇を先輩方に見せることができました。演技後に先輩からは、「すごくクオリティの高いものだった」「迫力があった」など嬉しいコメントをたくさん頂きました。
+＊Discussionは諸事情により2020年度は未実施
+<br>セレモニーの最初と最後には、現ESSの代表であるプレジデントからトラセンを開催するに当たって一言、ESSの１年生と２年生を代表して感謝の言葉を先輩に伝えました。引退される先輩からも、セレモニー全体を通しての感想、後輩に向けてのお言葉を一言頂きました。
+
+        </p>
+    </div>
+    <!--メインここまで-->
+   <!--ここからサイド-->
+    <aside id="sidebar" class="col-sm-4">
+     <div id="sidebar_sub">
+        <div class="card">
+            <div class="card-header">
+              イベント一覧
+            </div>
+            <div class="card-body">
+                <div><%= link_to '・春キャン', spring_camp_path, class: 'side-letter' %></div>
+                <div><%= link_to '・新歓', freshman_welcome_party_path, class: 'side-letter' %></div>
+                <div><%= link_to '・上南戦', jounan_path, class: 'side-letter' %></div>
+                <div><%= link_to '・サマーキャンプ', summer_camp_path, class: 'side-letter' %></div>
+                <div><%= link_to '・ハロウィンパーティー', halloween_party_path, class: 'side-letter' %></div>
+                <div><%= link_to '・学祭', nanzan_festival_path, class: 'side-letter' %></div>
+                <div><%= link_to '・クリスマスパーティー', christmas_party_path, class: 'side-letter' %></div>
+                <div class="active"><%= link_to '・追いコン', farewell_party_path, class: 'side-letter' %></div>
+            </div>
+        </div>
+     </aside>
+    <!--サイドここまで-->
+</div>
+ <!--wrapperここまで-->
+
+
+
+

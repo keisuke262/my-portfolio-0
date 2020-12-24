@@ -1,16 +1,212 @@
-<div class="drama"><h1>Dramaセクション</h1></div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+ 
+// ライブラリのロード
+// name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
+google.load('visualization', '1', {'packages':['corechart']});     
+         
+// グラフを描画する為のコールバック関数を指定
+google.setOnLoadCallback(drawChart);
+ 
+// グラフの描画   
+function drawChart() {         
+        
+// 配列からデータの生成
+  var data = google.visualization.arrayToDataTable([
+    ['学部'   , '%'],
+    ['外国語(英米)' , 2 ],
+    ['国際教養' , 4 ],
+  ]);
+ 
+   
+    // オプションの設定
+  var options = {
+    title: 'Dramaセクションの学部別算出  ( 単位：% )',
+    is3D: true
+  };          
+              
+           
+    
+                  
+    // 指定されたIDの要素に円グラフを作成
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      
+  // グラフの描画
+  chart.draw(data, options);
+  
+  
+}
+  
+// グラフを描画する為のコールバック関数を指定
+google.setOnLoadCallback(drawChart1);
+ 
+// グラフの描画   
+function drawChart1() {         
+        
+// 配列からデータの生成
+  var data = google.visualization.arrayToDataTable([
+    ['男女比'   , '%'],
+    ['male' , 0 ],
+    ['female' , 6 ],
+  ]);
+  
+    // オプションの設定
+  var options = {
+    title: 'Dramaセクションの男女比  ( 単位：% )',
+    is3D: true
+  };          
+         
+
+                  
+    // 指定されたIDの要素に円グラフを作成
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+      
+  // グラフの描画
+  chart.draw(data, options);
+  
+ 
+}
+// グラフを描画する為のコールバック関数を指定
+google.setOnLoadCallback(drawChart2);
+ 
+// グラフの描画   
+function drawChart2() {         
+        
+// 配列からデータの生成
+  var data = google.visualization.arrayToDataTable([
+    ['学年比'   , '%'],
+    ['1年次' , 2 ],
+    ['２年次' , 4 ],
+  ]);
+ 
+   
+    
+     
+    // オプションの設定
+  var options = {
+    title: 'Dramaセクションの学年比  ( 単位：% )',
+    is3D: true
+  };          
+             
+           
+    
+                  
+    // 指定されたIDの要素に円グラフを作成
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+      
+  // グラフの描画
+  chart.draw(data, options);
+  
+  
+}
+    </script>
+ 
+ <!--wrapperここから-->
+<div id="wrapper" class="row">
+    <!--ここからメイン-->
+    <div id="main" class="col-12 col-sm-7">
+        <h1 class="text-center mt-5">Dramaセクション</h1>
+        <div class="text-center mt-5"><%= image_tag 'Drama11', :width => '100%' %></div>
+        <p class="mt-4">ドラマセクションでは、英語でミュージカルをやっています！ 
+        <br>年に1度行われる大きな大会に向けて、英語力、発音、表現力、歌唱力などを鍛えるために日々練習を行います。
+        </p>
+        <h2 class="mt-4">1. 活動</h2>
+        <h3 class="mt-4">1.1 活動日時・場所</h3>
+        <p class="mt-4"> 活動日時 : <br>
+活動場所 : コロナ禍ではZoomで活動を行っていています。通常であれば大学内の教室を借りたり、フラッテンホールを借りて練習をしています。
+        </p>
+        <h3>1.2 コロナ禍での活動</h3>
+        <p>
+        私たちドラマセクションでは、毎週金曜日にZoomを利用して読み合わせの練習を行っています。
+        発音や声の抑揚、セリフの切り込みかたなど、お互いにアドバイスしあったり先輩方にアドバイスを頂いたりして自分たちのスキルを高めています。
+        今は一年生の子も参加してくれていて楽しく活動しています！しかも一年生の子たちのレベルが高くて、
+        今後一緒に作品を作っていくのが楽しみです(^▽^)これからまた長期休暇に入るので、
+        読み合わせに加えてメイクや小道具などの技術も磨いていく計画を立てています！なかなか同じ空間に集まって練習するということが難しく、
+        やることが限られてしまいますが、できることを積極的にやっていきたいと思います！
+        </p>
+        <h3>1.3 コロナ以前の活動</h3>
+        <p>
+        週3～5日で、大学内の教室を借りて活動を行っていました。主な活動内容は、発音練習や読み合わせ、場面練習、そして通し練習です。
+        練習は週3～5日でなかなかハードですが、本番をやり終えたときの達成感は格別です。    
+        </p>
+        <h2>2. 大会スケジュール＆大会実績</h2>
+        <h3></h3>
+        <p></p>
+        <h3></h3>
+        <p></p>
+        <h3></h3>
+        <p></p>
+        <h2>3. メンバー</h2>
+        <h3>3.1 英語系の学部の人が多い？</h3>
+        <di class="row">
+        <div id="chart_div" style="width: 100%; height: 45rem; overflow: hidden;" class="graph"></div>
+        <p>
+        DramaSectionは英語系の学部の人しかいない状態です。
+        しかし、自分が英語系の学部じゃないからと言って心配する必要はありません！
+        2020年1月18日に行われたドラフェス(中部の大学のESSのDramaSectionが、演劇を披露し勝敗を競います)
+        では、英語系の学部ではない人が5人も出ています！例え自分が英語系の学部でなくても、
+        しっかりと練習を積み重ねれば誰でも英語で演劇をこなすことができます！
+        英語での演劇に興味ある方是非待ってます！
+        </p>
+        <h3>3.2 男女比は？</h3>
+        <div id="chart_div1" style="width: 100%; height: 45rem; overflow: hidden;" class="graph"></div>
+        <p>
+        メンバー6人中6人女子といった状況です。
+        もちろん男子も募集していますが、例年やはり女子の方がDramaSectionに入る
+        割合は高いです。
+        男女問わず大歓迎ですので、興味ある方は一度練習に覗きに来てください！
+        </p>
+        <h3>3.3 何年次が多い？</h3>
+        <div id="chart_div2" style="width: 100%; height: 45rem; overflow: hidden;" class="graph"></div>
+        <p>
+        2年次が多いですね。2020年はコロナ感染拡大に伴って、サークルや部活動体験は
+        オフラインでできなかったことの影響は想像以上い大きく、新一年生にとっては
+        なかなかサークル・部活決めには慎重だったのだと思われます。なので2020年の新入生
+        の数は例年より下回っています。
+        特にDramaSectionでは規模の大きい演劇をやろうとなると、メンバーの数が多ければ多いほど
+        望ましいです。なぜなら、メンバーが少ないと1人2役3役を担当することになり、
+        一人一人の負担が大きいのみならず、１つの役に思いっきりなりきることが
+        困難です。ですので、DramaSectionメンバー一同は、男女問わずメンバー大募集中です！
+        一緒に大規模の一大作品を作り上げましょう！
+        </p>
+        </div>
+
+    </div>
+    <!--メインここまで-->
+    <!--ここからサイド-->
+    <aside id="sidebar" class="offset-sm-1 col-sm-3">
+        <div class="card">
+            <div class="card-header">
+              目次
+            </div>
+            <div class="card-body">
+                <div class="side-letter"><a>1. 活動</a></div>
+                <ul>
+                    <a><li>1.1 活動日時・場所</li></a>
+                    <a><li>1.2 コロナ禍での活動</li></a>
+                    <a><li>1.3 コロナ以前の活動</li></a>
+                </ul>
+                <div class="side-letter"><a>2. 大会スケジュール＆大会実績</a></div>
+                <ul>
+                    <a><li>2.1 BFG</li></a>
+                    <a><li>2.2 BPG</li></a>
+                    <a><li>2.3 ガイドコンテスト</li></a>
+                </ul>
+                <div class="side-letter"><a>3. メンバー</a></div>
+                <ul>
+                    <a><li>3.1 英語系の学部の人が多い？</li></a>
+                    <a><li>3.2 男女比は？</li></a>
+                    <a><li>3.3　何年次が多い？</li></a>
+                </ul>
+            </div>
+     </aside>
+    <!--サイドここまで-->
+</div>
+ <!--wrapperここまで-->
 
 
 
-<h2>活動日時・場所</h2>
-<p>活動日時 : <br>
-活動場所 : 
 
-<h2>コロナ禍での活動</h2>
-<p></p>
-<h2>コロナ以前の活動</h2>
-<p>
-</p>
 
 
 

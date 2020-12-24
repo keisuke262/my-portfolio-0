@@ -1,0 +1,57 @@
+
+ <!--wrapperここから-->
+<div id="wrapper" class="row">
+    <!--ここからメイン-->
+    <div id="main" class="col-12 col-sm-8">
+        <h1 class="text-center mt-5">ハロウィンパーティー</h1>
+        <div class="text-center mt-5"><%= image_tag 'Guide10', :width => '100%' %></div>
+        <p class="mt-4">
+        
+
+
+普段のサークル活動ではなかなか他のセクションの方々と交流する機会がないのですが、
+イベントによっては全セクションが参加できるイベントがあるんです！
+
+そんなイベントの中から今回は「ハロウィンパーティー」というイベントを詳しく紹介します。
+
+ハロウィンパーティーではみんな各々仮装して参加します。動物やかぼちゃ、デビルなどの被り物を被ったり、ゾンビメイクをしたり、
+コスチュームを着たりします。ちなみに去年私はうさぎのカチューシャをして参加しました！
+
+お菓子を食べながら、おしゃべりしたり、クイズ大会やビンゴ大会をしたりします。クイズやビンゴ大会では景品が用意されており、
+みんな景品GETを目指してゲームを楽しみます。ちなみに去年のクイズ大会では「国旗」クイズをしました。みんなとても楽しんでいました。
+他のセクションの人たちと会話ができて、交流を深めることができます。
+
+また、誰の仮装が素晴らしかったかを投票で決めます。多く票を貰った人には景品が渡されます。
+ぜひハロウィンパーティーに参加して、普段できない仮装を楽しんでほしいです！
+
+ESSのイベントではよく景品が貰えます！様々なゲームも用意されており、とても楽しいイベントばかりです。
+今年度のハロウィンパーティーはコロナの影響で開催できるか分かりませんが、
+何かしら全セクションで集まって楽しめるイベントを開催できたらなと思ってます。
+
+        </p>
+    </div>
+    <!--メインここまで-->
+    <!--ここからサイド-->
+    <aside id="sidebar" class="col-sm-4">
+     <div id="sidebar_sub">
+        <div class="card">
+            <div class="card-header">
+              イベント一覧
+            </div>
+            <div class="card-body">
+                <div><%= link_to '・春キャン', spring_camp_path, class: 'side-letter' %></div>
+                <div><%= link_to '・新歓', freshman_welcome_party_path, class: 'side-letter' %></div>
+                <div><%= link_to '・上南戦', jounan_path, class: 'side-letter' %></div>
+                <div><%= link_to '・サマーキャンプ', summer_camp_path, class: 'side-letter' %></div>
+                <div class="active"><%= link_to '・ハロウィンパーティー', halloween_party_path, class: 'side-letter' %></div>
+                <div><%= link_to '・学祭', nanzan_festival_path, class: 'side-letter' %></div>
+                <div><%= link_to '・クリスマスパーティー', christmas_party_path, class: 'side-letter' %></div>
+                <div><%= link_to '・追いコン', farewell_party_path, class: 'side-letter' %></div>
+            </div>
+        </div>
+     </aside>
+    <!--サイドここまで-->
+</div>
+ <!--wrapperここまで-->
+
+

@@ -29,9 +29,36 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
+  require 'action_mailer'
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # ActionMailerによるメール送信機能の実装に必要な設定
+  # config.action_mailerというパラメーターに色んなオプションを指定していく
+  # メール送信を有効にする
+  #config.action_mailer.perform_deliveries = true
+  # メールの送信時に失敗したときにエラーを出すか、出したいからtru
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :letter_opener_web
+  # メールの送信方法。デフォルトがsmtp
+  #SimpleMailTransferProtocol 簡単なメールの送信手順・お約束事
+  config.action_mailer.delivery_method = :smtp
+  # smtpの詳細設定
+  config.action_mailer.smtp_settings = {
+    # SMTPサーバのホスト名
+    address: 'smtp.gmail.com',
+    port: '587',
+    domain: 'gmail.com',
+    # メール送信時に使用するgmailのアカウント
+    user_name: 'nanzanessnaimu@gmail.com',
+    # メール送信時に使用するgmailのパスワード
+    password: 'mvbolyehmzbemqkj',
+    # 認証方法
+    authentication: 'plain',
+    #authentication: 'plain',
+    # メールの送信にTLS認証を使用するか
+    # TLSは簡単に言うと、送受信しているデータを暗号化する通信手順のこと
+    enable_starttls_auto: true
+  }
 
   config.action_mailer.perform_caching = false
 
