@@ -14,10 +14,12 @@
 //= require activestorage
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require_tree .  
 
+/*
 
+//Carousel
 
 
 $(document).on('turbolinks:load', function(){
@@ -60,6 +62,8 @@ $(document).on('turbolinks:load', function(){
       ]
     });
   });
+*/
+
 
 //サイドバーを固定＆解除
 
@@ -69,6 +73,8 @@ $(document).on('turbolinks:load', function(){
     var contentHeight = $("#content_border").height();
     // サイドバーの親要素の高さ
     var sidebarHeight = $("#sidebar_sub").height();
+    var sidebarHeight1 = $("#sidebar_sub1").height();
+    var sidebarHeight2 = $("#sidebar_sub2").height();
     var w = $(window);
   
     // サイドバーの親要素の高さがコンテンツ部分の高さより小さい時
@@ -97,13 +103,13 @@ $(document).on('turbolinks:load', function(){
         && w.scrollTop() < sidebarScrollStart) {
   
           // サイドバーを固定する処理
-          sidebarSub.css({"position": "fixed", "bottom": "24px"});
+          sidebarSub.css({"position": "fixed", "bottom": "1.9rem"});
   
         // 「scrollTopの位置」が「サイドバーの固定を解除したい位置」より大きい時
         } else if(w.scrollTop() >= sidebarScrollStart) {
   
           // サイドバーの固定を解除する処理
-          sidebarSub.css({"position": "absolute", "bottom": "0"});
+          sidebarSub.css({"position": "absolute", "bottom": "12rem"});
   
         // それ以外のとき
         // （「scrollTopの位置」が「サイドバーを固定したい位置」より小さい時）
@@ -117,47 +123,54 @@ $(document).on('turbolinks:load', function(){
       });
   
     } 
+
+    
   
   }
 
-
-
-
-
-  /* 
-  $('.animated').waypoint({
-    handler(direction) {
-      if(direction === 'down') {
-        
-        // 後からクラスを追加して特定のタイミングでアニメーションを実行する
-        // this.elementはクラスがanimatedである要素のうち、
-        // 画面の一番下に来ているものである。
-        $(this.element).addClass('fadeInUp');
+  //適性診断テスト
   
-        this.destroy();
-  
-      }
-    },
-    // 要素が画面の一番下に着たらhandler実行
-    offset: '100%'
-  })
+//ボタンを押すごとに画面が切り替わる関数
+$(function () {
 
-  */
-
-
-
-  //スクロール値ごとの動きを設定
-  /*
-$(function() {
-  $(window).scroll(function () {
-    var top = $(this).scrollTop();
-    if(top > 500) {
-    
-      $("#sidebar").fadeOut('800');
-    }
-    
-
+  $(".btn").on("click", function () {
+    $(this).closest("div").css("display", "none");
+    id = $(this).attr("href");
+    $(id).addClass("fit").fadeIn("slow").show();
   });
+
+
+
+//選択ボタンデータを配列に入れてカウントする関数
+    var countA;
+    var countB;
+    var box =[];
+  $(".btn").each(function(){
+    $(this).on('click',function(){
+      var value = $(this).data("value");
+       box.push(value);
+
+      countA = box.filter(function(x){
+                    return x === "a"
+                  }).length;
+      countB = box.filter(function(y){
+                      return y === "b"
+                  }).length;
+    });
+  });
+
+
+//結果を出力する関数
+  $('.end').on('click',function(){
+    if( countA > countB ) {
+      $('#answer_01').css("display",""); //回答1
+    } else {
+      $('#answer_02').css("display","");//回答2
+  }
 });
 
-*/
+});
+
+
+
+

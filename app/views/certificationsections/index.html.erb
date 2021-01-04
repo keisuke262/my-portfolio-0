@@ -123,11 +123,12 @@ function drawChart2() {
 }
     </script>
     </head>
- <!--wrapperここから-->
-<div id="wrapper" class="row">
+<div class="container" id="content_border">
+  <!--wrapperここから-->
+ <div id="wrapper" class="row">
     <!--ここからメイン-->
     <div id="main" class="col-12 col-sm-8">
-        <h1 class="text-center mt-5">Certificationセクション</h1>
+        <h1 class="text-center">Certificationセクション</h1>
         <div class="text-center mt-5"><%= image_tag 'Guide10', :width => '100%' %></div>
         <p class="mt-4">
         資格セクションでは
@@ -187,6 +188,7 @@ BFGはただガイドしておしまい、なんてことはありません！
     <!--メインここまで-->
     <!--ここからサイド-->
     <aside id="sidebar" class="col-sm-4">
+      <div id="sidebar_sub">
         <div class="card">
             <div class="card-header">
               目次
@@ -211,10 +213,13 @@ BFGはただガイドしておしまい、なんてことはありません！
                     <a><li>3.3　何年次が多い？</li></a>
                 </ul>
             </div>
+          </div>
      </aside>
     <!--サイドここまで-->
-</div>
+ </div>
  <!--wrapperここまで-->
+</div>
+<!--containerここまで-->
 
 
 

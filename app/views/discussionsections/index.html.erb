@@ -1,8 +1,134 @@
- <!--wrapperここから-->
-<div id="wrapper" class="row">
+<head>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ <script type="text/javascript">
+ 
+// ライブラリのロード
+// name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
+google.load('visualization', '1', {'packages':['corechart']});     
+         
+// グラフを描画する為のコールバック関数を指定
+google.setOnLoadCallback(drawChart);
+ 
+// グラフの描画   
+function drawChart() {         
+        
+// 配列からデータの生成
+  var data = google.visualization.arrayToDataTable([
+    ['学部'   , '%'],
+    ['外国語(英米・ドイツ)' , 4 ],
+    ['国際教養' , 6 ],
+    ['経済' , 1 ],
+    ['経営' ,  1 ],
+    ['法律' , 1 ],
+    ['総合政策' , 1],
+    ['人文' , 1 ]
+  ]);
+ 
+   
+    // オプションの設定
+  var options = {
+    title: 'Guideセクションの学部別算出  ( 単位：% )',
+    is3D: true
+  };          
+              
+           
+    
+                  
+    // 指定されたIDの要素に円グラフを作成
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      
+  // グラフの描画
+  chart.draw(data, options);
+  
+  // onReSizeイベント    
+  //window.onresize = function(){
+    
+   // drawChart();
+    
+  //};
+}
+  
+// グラフを描画する為のコールバック関数を指定
+google.setOnLoadCallback(drawChart1);
+ 
+// グラフの描画   
+function drawChart1() {         
+        
+// 配列からデータの生成
+  var data = google.visualization.arrayToDataTable([
+    ['男女比'   , '%'],
+    ['male' , 8 ],
+    ['female' , 7 ],
+  ]);
+  
+    // オプションの設定
+  var options = {
+    title: 'Guideセクションの男女比  ( 単位：% )',
+    is3D: true
+  };          
+         
+
+                  
+    // 指定されたIDの要素に円グラフを作成
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+      
+  // グラフの描画
+  
+  chart.draw(data, options);
+  
+  // onReSizeイベント    
+  //window.onresize = function(){
+    
+   // drawChart1();
+    
+  //};
+}
+// グラフを描画する為のコールバック関数を指定
+google.setOnLoadCallback(drawChart2);
+ 
+// グラフの描画   
+function drawChart2() {         
+        
+// 配列からデータの生成
+  var data = google.visualization.arrayToDataTable([
+    ['学年比'   , '%'],
+    ['1年次' , 7 ],
+    ['２年次' , 8 ],
+  ]);
+ 
+   
+    
+     
+    // オプションの設定
+  var options = {
+    title: 'Guideセクションの学年比  ( 単位：% )',
+    is3D: true
+  };          
+             
+           
+    
+                  
+    // 指定されたIDの要素に円グラフを作成
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+      
+  // グラフの描画
+  chart.draw(data, options);
+  
+  // onReSizeイベント    
+ // window.onresize = function(){
+    
+    //drawChart2();
+    
+ // };
+}
+    </script>
+</head>
+<div class="container" id="content_border">
+  <!--wrapperここから-->
+ <div id="wrapper" class="row">
     <!--ここからメイン-->
     <div id="main" class="col-12 col-sm-8">
-        <h1 class="text-center mt-5">Discussionセクション</h1>
+        <h1 class="text-center">Discussionセクション</h1>
         <div class="text-center mt-5"><%= image_tag 'Discussion1', :width => '100%' %></div>
         <h2 class="mt-4">活動</h2>
         <h3 class="mt-4">活動日時・場所</h3>
@@ -38,35 +164,38 @@
     <!--メインここまで-->
     <!--ここからサイド-->
     <aside id="sidebar" class="col-sm-4">
+      <div id="sidebar_sub">
         <div class="card">
             <div class="card-header">
               目次
             </div>
             <div class="card-body">
-                <a href="">1. 活動</a>
+                <div class="side-letter"><a>1. 活動</a></div>
                 <ul>
                     <a><li>1.1 活動日時・場所</li></a>
                     <a><li>1.2 コロナ禍での活動</li></a>
                     <a><li>1.3 コロナ以前の活動</li></a>
                 </ul>
-                <a href="">2. イベント</a>
+                <div class="side-letter"><a>2. イベント</a></div>
                 <ul>
                     <a><li>2.1 BFG</li></a>
                     <a><li>2.2 BPG</li></a>
                     <a><li>2.3 ガイドコンテスト</li></a>
                 </ul>
-                <a href="">3. メンバー</a>
+                <div class="side-letter"><a>3. メンバー</a></div>
                 <ul>
                     <a><li>3.1 英語系の学部の人が多い？</li></a>
                     <a><li>3.2 男女比は？</li></a>
                     <a><li>3.3　何年次が多い？</li></a>
                 </ul>
             </div>
+          </div>
      </aside>
     <!--サイドここまで-->
-</div>
+  </div>
  <!--wrapperここまで-->
-
+</div>
+<!--containerここまで-->
 
 
 

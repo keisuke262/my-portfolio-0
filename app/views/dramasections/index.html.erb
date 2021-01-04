@@ -1,5 +1,6 @@
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
+<head>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ <script type="text/javascript">
  
 // ライブラリのロード
 // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
@@ -99,13 +100,14 @@ function drawChart2() {
   
   
 }
-    </script>
- 
- <!--wrapperここから-->
-<div id="wrapper" class="row">
+ </script>
+</head>
+<div class="container" id="content_border">
+ <!--wrapperここから--> 
+ <div id="wrapper" class="row">
     <!--ここからメイン-->
-    <div id="main" class="col-12 col-sm-7">
-        <h1 class="text-center mt-5">Dramaセクション</h1>
+    <div id="main" class="col-12 col-sm-8">
+        <h1 class="text-center">Dramaセクション</h1>
         <div class="text-center mt-5"><%= image_tag 'Drama11', :width => '100%' %></div>
         <p class="mt-4">ドラマセクションでは、英語でミュージカルをやっています！ 
         <br>年に1度行われる大きな大会に向けて、英語力、発音、表現力、歌唱力などを鍛えるために日々練習を行います。
@@ -169,12 +171,11 @@ function drawChart2() {
         困難です。ですので、DramaSectionメンバー一同は、男女問わずメンバー大募集中です！
         一緒に大規模の一大作品を作り上げましょう！
         </p>
-        </div>
-
     </div>
     <!--メインここまで-->
     <!--ここからサイド-->
-    <aside id="sidebar" class="offset-sm-1 col-sm-3">
+    <aside id="sidebar" class="col-sm-4">
+      <div id="sidebar_sub">
         <div class="card">
             <div class="card-header">
               目次
@@ -186,7 +187,7 @@ function drawChart2() {
                     <a><li>1.2 コロナ禍での活動</li></a>
                     <a><li>1.3 コロナ以前の活動</li></a>
                 </ul>
-                <div class="side-letter"><a>2. 大会スケジュール＆大会実績</a></div>
+                <div class="side-letter"><a>2. イベント</a></div>
                 <ul>
                     <a><li>2.1 BFG</li></a>
                     <a><li>2.2 BPG</li></a>
@@ -199,10 +200,13 @@ function drawChart2() {
                     <a><li>3.3　何年次が多い？</li></a>
                 </ul>
             </div>
+          </div>
      </aside>
     <!--サイドここまで-->
-</div>
+  </div>
  <!--wrapperここまで-->
+ </div>
+ <!--containerここまで-->
 
 
 

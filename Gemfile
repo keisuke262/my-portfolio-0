@@ -49,6 +49,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   #ActionMailer内容を開発(ローカル)環境でも確認できるようにする
   gem 'letter_opener_web'
+  #rubocop導入
+  gem 'rubocop', require: false
 end
 
 

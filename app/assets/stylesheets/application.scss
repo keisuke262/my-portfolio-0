@@ -14,21 +14,26 @@
  *= require_self
  */
 
+ 
+
 
 // 基本設定 文字の大きさはhtmlのfont-size: 10px;を基準にremで設定
  html {
    font-size: 10px;
+
  }
 
  body {
    background-color: #F5F5F5;
+
    line-height: 1.9;
    margin: 0 auto;
    padding: 0;
+   //max-width: 1300px;
    min-width: 1000px;
    font-size: 2.2rem;
-   font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック'
-                  ,YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+   font-family: Noto, "Hiragino Sans", Helvetica, Arial, sans-serif, 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック'
+   ,YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
  }
 
  @media only screen and (max-width: 576px) {
@@ -39,30 +44,45 @@
  
 }
 
+
+/*
+
 .container {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+
+main {
   margin-right: auto;
   margin-left: auto;
-  padding: 4.5rem;
-  //background-color: white;
-  //padding-left: 1.5rem;
-  //padding-right: 1.5rem;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
- }
-
-#main {
-  background-color: white;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
- //width: 66.6667%;
-  //margin-top: 5rem;
-  //margin-bottom: 5rem;
-  
+  margin-top: 100px;
 }
+
+*/
+
+.container #main {
+  background-color: white;
+  margin-top: 15rem;
+  margin-bottom: 12rem;
+}
+
+
+
+
+
+
 
 #sidebar {
   //padding-right: 30px;
   padding: 30px;
+  margin-top: 9.4rem;
+
 }
 
 @media only screen and (min-width: 992px) {
@@ -124,20 +144,22 @@
 
 }
 
-
-
-
-
-
- p {
+p {
   line-height: 1.9;
   margin-bottom: 40px;
   font-size: 2.2rem;
   padding: 0 20px;
 }
 
+.container h1 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 h1 {
   font-size: 3.3rem;
+  margin-top: 10rem;
+  font-weight: bold;
 }
 
 h2 {
@@ -146,7 +168,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.8rem;
+  font-size:2.8rem;
   margin: 0 10px 30px;
 }
 
@@ -173,10 +195,207 @@ h3 {
   padding-bottom: 50px;
 }
 
+/*
+.card a {
+  color: white;
+}
 
- 
+.card a:visited {
+ color: white;
+}
 
- 
+
+.card a:hover {
+ color:white;
+ font-weight: normal;
+ text-decoration: none;
+}
+
+*/
+
+
+
+// 画面横いっぱいにする設定
+
+
+.topimg1 {
+  width: 100%;
+  height: 100vh;
+  background-image: url(topimage3.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .intro {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-bottom: 10rem;
+    padding-top: 7rem;
+    padding-right: 7rem;
+    padding-left: 7rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .intro {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-bottom: 10rem;
+    padding-top: 7rem;
+    padding-right: 20rem;
+    padding-left: 20rem;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .section {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10rem;
+    padding-top: 7rem;
+    padding-right: 7rem;
+    padding-left: 7rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .section {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10rem;
+    padding-top: 1rem;
+    padding-right: 20rem;
+    padding-left: 20rem;
+  }
+  
+  
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .event {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-bottom: 10rem;
+    padding-top: 7rem;
+    padding-right: 7rem;
+    padding-left: 7rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .event {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-bottom: 10rem;
+    padding-top: 1rem;
+    padding-right: 20rem;
+    padding-left: 20rem;
+  }
+  
+  
+}
+
+
+
+
+.event .card-text {
+  color: white;
+}
+
+.event .card-title {
+  color: white;
+}
+
+
+.intro .card-text {
+  color: white;
+}
+
+.intro.card-title {
+  color: white;
+}
+
+
+.section .card-text {
+  color: white;
+}
+
+.section .card-title {
+  color: white;
+}
+
+
+@media only screen and (max-width: 576px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .section-title {
+    padding-top: 0rem;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .section-title {
+    padding-top: 6rem;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+}
+
+
+
+@media only screen and (max-width: 576px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .event-title {
+    padding-top: 0rem;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .event-title {
+    padding-top: 6rem;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+}
+
+
+
+.section .card-title {
+  font-weight: 600;
+}
+
+.event .card-title {
+  font-weight: 600;
+}
+
+.button-position {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card .button {
+  padding-bottom: -10px;
+  padding-top: -10px;
+}
+
+.card-header {
+  color: white;
+  background-color: #f89174;
+}
+ /*
 
  .card a {
    color: #00BFFF;
@@ -192,6 +411,14 @@ h3 {
   font-weight: normal;
   text-decoration: none;
 }
+
+*/
+
+/*
+.animated {
+  display: none;
+}
+*/
 
 
  a {
@@ -231,10 +458,22 @@ li {
   margin-top: 3rem!important;
 }
 
-
-.mt-5 {
-  margin-top: 4rem!important;
+@media only screen and (max-width: 576px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .mt-5 {
+  margin-top: -1rem!important;
+  }
 }
+
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以下の時に適用される
+  .mt-5 {
+    margin-top: 1rem!important;
+  }
+}
+
+
 
 .side-letter {
   color: #00BFFF;
@@ -259,14 +498,14 @@ li {
  @media only screen and (min-width: 0px) {
   // ウィンドウ幅が0px以上の時に適用される
  .mb-5 {
-   margin-bottom: -2rem!important;
+   margin-bottom: 8rem!important;
  }
 }
 
 @media only screen and (min-width: 576px) {
   // ウィンドウ幅が576px以上の時に適用される
  .mb-5 {
-  margin-bottom: -1rem!important;
+  margin-bottom: 4rem!important;
  }
 }
 
@@ -432,7 +671,7 @@ li {
 .navbar {
   position: fixed;
   position: -webkit-fixed;
-  top: 0;
+  top: 0%;
   width: 100%;
   z-index: 100;
   padding: 1.8rem;
@@ -443,113 +682,22 @@ li {
 
 
 @media (min-width: 576px) {
-  /* ウインドウ幅500px以下の時に適用されるスタイル */
+  /* ウインドウ幅576px以上の時に適用されるスタイル */
   
 /* navの設定=固定 */
 .navbar {
   position: fixed;
   position: -webkit-fixed;
-  top: 0;
+  top: 0%;
   width: 100%;
   z-index: 100;
   padding: 1rem;
  }
 }
 
-/* slickによるカルーセルの設定 */
-
- @import "slick-theme";
- @import "slick";
-
- 
-
-
-.slick-slide {
-   outline: none;
-}
-
- .slide-arrow{
-   position: absolute;
-   top: 50%;
-   margin-top: -50px;
- }
-
- 
- .prev-arrow{
-   left: -50px;
-   width: 0;
-   height: 0;
-   border-left: 0 solid transparent;
-   border-right: 15px solid black;
-   border-top: 10px solid transparent;
-   border-bottom: 10px solid transparent;
- }
- .prev-arrow:hover {
-   left: -50px;
-   width: 0;
-   height: 0;
-   border-left: 0 solid transparent;
-   border-right: 15px solid #0F0;
-   border-top: 10px solid transparent;
-   border-bottom: 10px solid transparent;
- }
-
- .next-arrow{
-   right: -50px;
-   width: 0;
-   height: 0;
-   border-right: 0 solid transparent;
-   border-left: 15px solid black;
-   border-top: 10px solid transparent;
-   border-bottom: 10px solid transparent;
- }
-
- .next-arrow:hover {
-   right: -50px;
-   width: 0;
-   height: 0;
-   border-right: 0 solid transparent;
-   border-left: 15px solid #0F0;
-   border-top: 10px solid transparent;
-   border-bottom: 10px solid transparent;
- }
-
- .carousel{
-
-   margin: 0 auto;
-   img{
-     width: 100%;
-   }
- }
-
- .multiple{
-   
-   margin: 0 auto;
-   img{
-     width: 100%;
-   }
- }
-
- 
-
-button{
-   margin: 0;
-   padding: 0;
-   background: none;
-   border: none;
-   border-radius: 0;
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-   outline: none
-
- }
-
- button:focus {
-    outline:0;
- }
-
  /* フッター用 */
+
+
 
  ul {
    list-style: none
@@ -588,17 +736,14 @@ button{
  .footer-list-top {
    width: 33.333%
  }
- .footer-list-top > li {
-   text-align: center;
-   padding-bottom: 10px
- }
+
  .footer-list-header {
    padding: 10px 0 5px 0;
    color: #fff;
-   font: 2.3vw "Oswald", sans-serif
+   font: 2.3rem "Oswald", sans-serif
  }
  .footer-list-anchor {
-   font: 1.3em "Open Sans", sans-serif
+   font: 2rem "Open Sans", sans-serif
  }
  
  .footer-social-section {
@@ -626,8 +771,9 @@ button{
  .footer-social-connect {
    display: flex;
    align-items: center;
-   font: 3.5em "Oswald", sans-serif;
+   font: 4rem "Oswald", sans-serif;
    color: #fff
+
  }
  .footer-social-small {
    font-size: 0.6em;
@@ -649,33 +795,42 @@ button{
    margin-right: auto
  }
  .footer-bottom-wrapper {
-   font-size: 1.5em;
+   font-size: 1.5rem;
    color: #fff
    
  
  }
 
- 
 
 
+@media only screen and (min-width: 769px) {
+  .footer-list-top > li {
+    text-align: center;
+  }
+
+}
  
 
  @media only screen and (max-width: 768px) {
    .footer-list-header {
-     font-size: 2em
+     font-size: 2rem
    }
    .footer-list-anchor {
-     font-size: 1.1em
+     font-size: 1.5rem
    }
    .footer-social-connect {
-     font-size: 2.5em
+     font-size: 1.5em
    }
    .footer-social-overlap > a {
      font-size: 2.24em
    }
    .footer-bottom-wrapper {
-     font-size: 1.3em
+     font-size: 1.3rem
    }
+   .footer-list-top  footer-list-header > li {
+    margin-left: 10px;
+
+  }
  }
  @media only screen and (max-width: 568px) {
    main {
@@ -685,10 +840,17 @@ button{
      width: 100%
    }
    .footer-list-header {
-     font-size: 3em;
+     font-size: 2rem;
+     font-weight: 700;
+     text-align: left;
+     margin-left: 18rem;
    }
    .footer-list-anchor {
-     font-size: 1.5em
+     font-size: 2rem;
+     font-weight: 400;
+     text-align: left;
+     margin-left: 20rem;
+     
    }
    .footer-social-section {
      justify-content: center
@@ -730,27 +892,25 @@ button{
    .footer-bottom-rights {
      display: block
    }
-    
-   .footer-list-top {
-      padding-right: 38px;
-   }
-   
+
+
+ 
  }
  @media only screen and (max-width: 320px) {
    .footer-list-header {
-     font-size: 2.2em
+     font-size: 1.8rem
    }
    .footer-list-anchor {
-     font-size: 1.2em
+     font-size: 1.3rem
    }
    .footer-social-connect {
-     font-size: 2.4em
+     font-size: 1rem
    }
    .footer-social-overlap > a {
      font-size: 2.24em
    }
    .footer-bottom-wrapper {
-     font-size: 1.3em
+     font-size: 1.2rem
    }
  }
  
@@ -772,5 +932,195 @@ h3 {
   color: #494949;/*文字色*/
   background: transparent;/*背景透明に*/
   border-left: solid 5px #7db4e6;/*左線*/
+}
+
+
+// 適性診断テストの設定
+
+
+.choose_box {
+  position: relative;
+  width: 100%;
+
+}
+ .choose_box p {
+  margin-top: 5%;
+  margin-bottom: 10%;
+    font-size: 20px;
+    display: block;
+    font-weight: 600;
+    text-align: center;
+  }
+
+.choose_box li {
+  display: inline-block;
+  width: 80%;
+  margin-top: 30px;
+  list-style: none;
+}
+
+.choose_box ul {
+  margin-left: 17%;
+  padding-left: 0;
+}
+
+
+
+.choose_box ul li a {
+  width: 100%;
+  color: #fff;
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #2791d4;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid #2791d4;
+  text-decoration: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.choose_box ul li a:hover {
+   background-color: #fff;
+  color: #2791d4;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+}
+
+.app-theme p {
+  color: #2791d4;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
+.fit {
+  //position: absolute;
+  margin: auto;
+  width: 100%;
+}
+
+
+
+.fit p {
+  margin-top: 5%;
+  margin-bottom: 3%;
+    font-size: 18px;
+    display: block;
+    font-weight: 600;
+    text-align: center;
+  }
+
+
+
+
+.result_type0 h4 {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+  background-color: #10c010;
+  }
+
+.result_type1 h4 {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+  background-color: #DC143C;
+  }
+
+
+
+.result_theme p  {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+
+.result_discription0 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+.result_discription1 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+.result_discription0 h2 {
+    color: #10c010;
+    text-align: center;
+}
+
+.result_discription1 h2 {
+    color: #DC143C;
+    text-align: center;
+}
+
+
+  .result_discription0 p {
+    font-family: "游ゴシック体", YuGothic;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #10c010;
+    color: #303030;
+    font-size: 16px;
+    line-height: 35px;
+    box-shadow: 0px 5px 1px #10c010;
+    border-radius: 5px;
+  }
+  .result_discription1 p {
+    font-family: "游ゴシック体", YuGothic;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #DC143C;
+    color: #303030;
+    font-size: 16px;
+    line-height: 35px;
+    box-shadow: 0px 5px 1px #DC143C;
+    border-radius: 5px;
+  }
+
+.return-btn {
+  margin-top: 5%;
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+    margin-bottom: 100px;
+}
+.return {
+  display: inline-block;
+  text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2791d4;
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #2791d4 ;
+}
+
+.return:hover {
+    border: 1px solid #2791d4 ;
+    background-color: #fff;
+    color: #2791d4;
+    transition: 0.5s;
 }
 

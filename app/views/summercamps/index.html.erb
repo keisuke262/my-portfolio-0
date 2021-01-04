@@ -1,10 +1,9 @@
- 
-
- <!--wrapperここから-->
-<div id="wrapper" class="row">
+ <div class="container" id="content_border">
+  <!--wrapperここから-->
+   <div id="wrapper" class="row">
     <!--ここからメイン-->
     <div id="main" class="col-12 col-sm-8">
-        <h1 class="text-center mt-5">サマーキャンプ</h1>
+        <h1 class="text-center">サマーキャンプ</h1>
         <div class="text-center mt-5"><%= image_tag 'Guide10', :width => '100%' %></div>
         <p class="mt-4">
             
@@ -32,7 +31,7 @@ Speechは普段の活動で行っている、Prepared Speech(準備型スピー�
     <!--メインここまで-->
     <!--ここからサイド-->
     <aside id="sidebar" class="col-sm-4">
-     <div id="sidebar_sub">
+      <div id="sidebar_sub">
         <div class="card">
             <div class="card-header">
               イベント一覧
@@ -48,11 +47,13 @@ Speechは普段の活動で行っている、Prepared Speech(準備型スピー�
                 <div><%= link_to '・追いコン', farewell_party_path, class: 'side-letter' %></div>
             </div>
         </div>
-     </aside>
+      </div>
+    </aside>
     <!--サイドここまで-->
-</div>
+  </div>
  <!--wrapperここまで-->
-
+</div>
+<!--containerここまで-->
 
 
 

@@ -122,12 +122,13 @@ function drawChart2() {
  // };
 }
     </script>
-    </head>
- <!--wrapperここから-->
-<div id="wrapper" class="row">
+</head>
+<div class="container" id="content_border">
+  <!--wrapperここから--> 
+  <div id="wrapper" class="row">
     <!--ここからメイン-->
     <div id="main" class="col-12 col-sm-8">
-        <h1 class="text-center mt-5">Debateセクション</h1>
+        <h1 class="text-center">Debateセクション</h1>
         <div class="text-center mt-5"><%= image_tag 'debate', :width => '100%' %></div>
         <p class="mt-4">
         ディベートでは  
@@ -291,6 +292,7 @@ BFGはただガイドしておしまい、なんてことはありません！
     <!--メインここまで-->
     <!--ここからサイド-->
     <aside id="sidebar" class="col-sm-4">
+      <div id="sidebar_sub">
         <div class="card">
             <div class="card-header">
               目次
@@ -315,11 +317,13 @@ BFGはただガイドしておしまい、なんてことはありません！
                     <a><li>3.3　何年次が多い？</li></a>
                 </ul>
             </div>
+          </div>
      </aside>
     <!--サイドここまで-->
+  </div>
+  <!--wrapperここまで-->
 </div>
- <!--wrapperここまで-->
-
+<!--containerここまで-->
 
 
 

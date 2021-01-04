@@ -122,12 +122,13 @@ function drawChart2() {
  // };
 }
     </script>
-    </head>
+</head>
+<div class="container" id="content_border">
  <!--wrapperここから-->
-<div id="wrapper" class="row">
+ <div id="wrapper" class="row">
     <!--ここからメイン-->
     <div id="main" class="col-12 col-sm-8">
-        <h1 class="text-center mt-5">Guideセクション</h1>
+        <h1 class="text-center">Guideセクション</h1>
         <div class="text-center mt-5"><%= image_tag 'Guide10', :width => '100%' %></div>
         <p class="mt-4">
         「ガイド」を行う上では、相手に観光地の歴史や情報をわかりやすく伝える、ということ、そしてなにより、
@@ -148,6 +149,10 @@ function drawChart2() {
 セクションキャンプや、年に数回行うBFG(Basic Field Guide)を筆頭とする学外イベントでは我々学生が引率を行いました。イベントの都合上練習の
 方が多いですが、本番のやりがいと楽しさはたまらないですよ！
         </p>
+        <div class="row">
+          <div class="text-center mt-5 col-sm-6"><%= image_tag 'Guide10', :width => '100%' %></div>
+          <p class="col-sm-6">テスト投稿です</p>
+        </div>
         <h2>2. イベント</h2>
         <h3>2.1 BFG</h3>
         <p>
@@ -321,8 +326,10 @@ BFGはただガイドしておしまい、なんてことはありません！
           </div>
      </aside>
     <!--サイドここまで-->
-</div>
+  </div>
  <!--wrapperここまで-->
+ </div>
+<!--containerここまで-->
 
 
 
