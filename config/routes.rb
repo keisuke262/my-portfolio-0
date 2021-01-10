@@ -27,9 +27,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   #ActionMailerの内容を開発(ローカル)環境で確認できるようにするための設定
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  resources :users do 
-    member do 
-      ge
+  resources :users 
 end
 
 
