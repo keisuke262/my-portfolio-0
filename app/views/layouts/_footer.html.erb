@@ -50,8 +50,8 @@
   <ul class="footer-list-top">
     <li id='help'>
       <h4 class="footer-list-header">セクション体験</h4></li>
-    <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor" itemprop="significantLink">お問い合わせ</a></li>
-    <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">適正セクション診断</a></li>
+    <li><%= link_to new_inquiry_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>お問い合わせ<% end %></li>
+    <li><%= link_to section_test_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>適正セクション診断<% end %></li>
   </ul>
   <ul class="footer-list-top">
     <li id='help'>

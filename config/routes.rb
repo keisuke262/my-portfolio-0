@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'toppages#index'
+
   get 'guide-section', to: 'guidesections#index'
   get 'certification-section', to: 'certificationsections#index'
   get 'debate-section', to: 'debatesections#index'
@@ -17,13 +18,18 @@ Rails.application.routes.draw do
   get 'nanzan-ess', to: 'nanzanesses#index'
   get 'section-test', to: 'sectiontests#index'
   get 'event', to: 'events#index'
+  get 'nanzaness-originalwebapp', to: 'nanzanessoriginalwebapps#index'
+
   resources :inquiries, only: [:index, :new, :create]
+  
   get 'login', to: 'sessions#new'
   get 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   #ActionMailerの内容を開発(ローカル)環境で確認できるようにするための設定
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  resources :users
+  resources :users do 
+    member do 
+      ge
 end
 
 

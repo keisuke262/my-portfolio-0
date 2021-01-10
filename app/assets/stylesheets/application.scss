@@ -30,6 +30,7 @@
    margin: 0 auto;
    padding: 0;
    //max-width: 1300px;
+   // webapplicationの都合でmin-widthを1000～1026に変更
    min-width: 1000px;
    font-size: 2.2rem;
    font-family: Noto, "Hiragino Sans", Helvetica, Arial, sans-serif, 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック'
@@ -276,8 +277,6 @@ h3 {
     padding-right: 20rem;
     padding-left: 20rem;
   }
-  
-  
 }
 
 @media only screen and (min-width: 0px) {
@@ -303,8 +302,6 @@ h3 {
     padding-right: 20rem;
     padding-left: 20rem;
   }
-  
-  
 }
 
 
@@ -1124,3 +1121,466 @@ h3 {
     transition: 0.5s;
 }
 
+
+
+
+
+
+// ここからLoginページの設定
+
+// フルスクリーン画像の設定
+
+.topimg2 {
+  width: 100%;
+  height: 100vh;
+  background-image: url(loginimage1.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+}
+
+// 画像上の中央に文字を設置する設定
+
+.topimg2 {
+  position: relative;
+}
+
+.title  {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  // Microsoftと同じフォントの種類を指定
+  font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  // Appleと同じフォントの種類を指定
+  //font-family:"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; 
+  margin: 0;
+  padding: 0;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-size: 5rem;
+}
+
+.subtitle1 {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  // Microsoftと同じフォントの種類を指定
+  font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  // Appleと同じフォントの種類を指定
+  //font-family:"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; 
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-size: 3rem;
+}
+
+
+.subtitle2 {
+  position: absolute;
+  font-weight: bold;
+  // Microsoftと同じフォントの種類を指定
+  font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  // Appleと同じフォントの種類を指定
+  //font-family:"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; 
+  margin: 0;
+  padding: 0;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-size: 3rem;
+}
+
+.webapp .topimg2 a {
+  color: white;
+  border-bottom: solid 3px white;
+}
+
+
+// 背景全体を暗くする
+// beforeで背景画像前面に要素を用意し
+// rgbaで半透明の黒を重ねる
+/*
+
+.topimg2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+}
+*/
+
+/* 背景画像をぼかす設定
+  blurでぼかす
+  ぼかす程度はpxで指定
+*/
+
+.topimg2 {
+  z-index: 0;
+}
+
+.topimg2::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  // blurで指定したpxと同じ値を指定
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: inherit;
+  filter: blur(5px);
+}
+
+
+// ここからWebApplicationの位置設定
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .app1 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 8rem;
+    padding-right: 12rem;
+    padding-left: 12rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .app1 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 12rem;
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .app2 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 8rem;
+    padding-bottom: 120px;
+    padding-right: 12rem;
+    padding-left: 12rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .app2 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 12rem;
+    padding-bottom: 120px;
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .app3 {
+    width: 100%;
+    background-color: white;
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+    padding-right: 12rem;
+    padding-left: 12rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .app3 {
+    width: 100%;
+    background-color: white;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+
+
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .up {
+    margin-top: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .up {
+    margin-top: 4rem;
+  }
+}
+
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .app4 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 0;
+    padding-bottom: 12rem;
+    padding-right: 12rem;
+    padding-left: 12rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .app4 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 0;
+    padding-bottom: 12rem;
+    padding-right: 20rem;
+    padding-left: 20rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .app5 {
+    width: 100%;
+    background-color: white;
+    padding-top: 0;
+    padding-bottom: 12rem;
+    padding-right: 12rem;
+    padding-left: 12rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .app5 {
+    width: 100%;
+    background-color: white;
+    padding-top: 0;
+    padding-bottom: 12rem;
+    padding-right: 20rem;
+    padding-left: 20rem;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .app6 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 0;
+    padding-bottom: 12rem;
+    padding-right: 12rem;
+    padding-left: 12rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .app6 {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-top: 0;
+    padding-bottom: 12rem;
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+
+
+
+// ここからはWebApplicationの写真の後の文字設定
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .after-picture {
+    margin-top: 8rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .after-picture {
+    margin-top: 8rem;
+  }
+}
+
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .summary-title {
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  // ウィンドウ幅が576px以上の時に適用される
+  .summary-title {
+    margin-top: 10px;
+    margin-bottom: 100px;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  .img-top1 {
+    margin-top: 3rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  .img-top1 {
+    margin-top: 4rem;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  .img-top2 {
+    margin-top: 3rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  .img-top2{
+    margin-top: 12rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 0px) {
+  .img-top3 {
+    margin-top: 3rem;
+  }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  .img-top3 {
+    margin-top: 11.5rem;
+  }
+}
+
+
+.red{
+  color: #DC143C;
+  font-weight: bold;
+}
+.blue{
+  color: #00BFFF; 
+  font-weight: bold;
+}
+.pink{
+  color: palevioletred;
+  font-weight: bold;
+}
+
+// 文字を太字にする設定
+
+.bold {
+  font-weight: bold;
+}
+
+/* 文字に下線を引く設定
+  transparentの値を小さくすると下線の太さが細くなり、
+  値を大きくすると下線の太さが太くなる
+  #f2dd92は下線の色を設定している。
+  0%のところは特に触らなくてもOK
+*/
+
+
+.under {
+  background: linear-gradient(transparent 75%, #f2dd92 0%)
+}
+
+// タイトル付きの枠で囲う設定 
+
+.box {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #62c1ce;
+}
+
+.box .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -3px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #62c1ce;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+
+.box p {
+  margin: 0; 
+  padding: 0;
+}
+
+// タイトルなしの囲いをつける設定
+
+.box1{
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  border: double 5px #4ec4d3;
+}
+
+.box1 p {
+  margin: 0; 
+  padding: 0;
+}
+
+// 文字の前にチェックマーク(✓)を入れたいときの設定
+
+.check:before {
+  content: "\02714";
+  margin-right: 10px;
+}
