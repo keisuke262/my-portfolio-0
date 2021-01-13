@@ -1,7 +1,9 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
-  # password_digestカラムとhas_secure_passwordでログイン認証が可能になる
+  validates :goal, presence: true, length: { maximum: 255 }
+  validates :achieve, presence: true, length: { maximum: 255 }
+  # password_digestカラムを用意し、
+  #モデルファイルにhas_secure_passwordを記述すれば
+  #ログイン認証が可能になる
   has_secure_password
 end

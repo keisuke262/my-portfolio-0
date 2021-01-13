@@ -9,3 +9,10 @@ class Inquiry < ApplicationRecord
   validates :time, presence: true, length: { maximum: 100 }
   validates :message, presence: true, length: { maximum: 500 }
 end
+
+
+validates :name, presence: true, length: { maximum: 50 }
+  # password_digestカラムを用意し、
+  #モデルファイルにhas_secure_passwordを記述すれば
+  #ログイン認証が可能になる
+  has_secure_password

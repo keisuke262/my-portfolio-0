@@ -23,11 +23,13 @@ Rails.application.routes.draw do
   resources :inquiries, only: [:index, :new, :create]
   
   get 'login', to: 'sessions#new'
-  get 'login', to: 'sessions#create'
+  post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   #ActionMailerの内容を開発(ローカル)環境で確認できるようにするための設定
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  resources :users 
+  get 'signup-secret0495821', to: 'users#new'
+  resources :users, only: [:index, :show, :create, :edit, :update, :destroy]
+
 end
 
 

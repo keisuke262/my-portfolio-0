@@ -9,10 +9,8 @@ class SessionsController < ApplicationController
   def index
   end
 
-  def new; end
 
   def create
-    render layout: false
     # newからcreateに送られてくるフォームデータは:sessionの中に入っている
     # session[:user_id]にログインユーザのidが代入された時点でログイン完了
     # このとき、ブラウザのCookieにログイン情報が保存される。
@@ -21,8 +19,29 @@ class SessionsController < ApplicationController
     if login(name, password)
       flash[:success] = 'Successfully logged in !'
       redirect_to @user
+    else
+      flash.now[:danger] = 'ログインに失敗しました。'
+      render :new
     end
+  end
 
-    def destroy; end
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = 'ログアウトしました。'
+    redirect_to root_url
+  end
+
+  private
+
+  def login(name, password)
+    @user = User.find_by(name: name)
+    if @user && @user.authenticate(password)
+      #ログイン成功
+      session[:user_id] = @user.id
+      return true
+    else
+      #ログイン失敗
+      return false
+    end
   end
 end
