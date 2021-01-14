@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     # ControllerからHelperのメソッドを使うことは
     # デフォルトではできないのでincludeする
     # logged_in?はHelperで定義している
-    
+
     include SessionsHelper
 
     private
@@ -14,5 +14,12 @@ class ApplicationController < ActionController::Base
         unless logged_in?
             redirect_to root_url
         end
+    end
+
+
+    # 投稿数を取得
+    # これをレベルアップの基準に使う
+    def counts(user)
+        @count_posts = user.posts.count
     end
 end

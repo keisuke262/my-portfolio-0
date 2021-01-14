@@ -6,4 +6,9 @@ class User < ApplicationRecord
   #モデルファイルにhas_secure_passwordを記述すれば
   #ログイン認証が可能になる
   has_secure_password
+
+  # 一対多の関係を表現
+  # これによって、user.postsであるUserが投稿した
+  # post一覧を取得することができる
+  has_many :posts
 end

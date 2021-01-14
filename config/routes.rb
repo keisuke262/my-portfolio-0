@@ -28,8 +28,9 @@ Rails.application.routes.draw do
   #ActionMailerの内容を開発(ローカル)環境で確認できるようにするための設定
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'signup-secret0495821', to: 'users#new'
+  get 'webapp-toppages', to: 'webapptoppages#index'
   resources :users, only: [:index, :show, :create, :edit, :update, :destroy]
-
+  resources :posts, only: [:create, :destroy, :edit, :update]
 end
 
 

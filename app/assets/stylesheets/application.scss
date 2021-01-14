@@ -1504,7 +1504,36 @@ h3 {
   }
 }
 
+// flashメッセージの位置設定
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  margin-top: 134px;
+  margin-bottom: -140px;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.alert-danger {
+  
+  margin-top: 134px;
+  margin-bottom: -140px;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+// webapptoppageの位置設定
+
+.webtop {
+  margin-top: 200px;
+}
+
+
 // USerのshowpage
+
+
 
 #user-show {
   margin-top: 200px;

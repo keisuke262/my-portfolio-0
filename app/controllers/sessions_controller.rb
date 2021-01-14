@@ -2,8 +2,8 @@
 
 class SessionsController < ApplicationController
 
-  #Loginページだけapplication.html.erbを適用せずに
-  #新たに作ったindex.html.erb(navとfooter無し)を適用する
+  #application.html.erbを適用せずに
+  #新たに作ったindex.html.erb(footer無し)を適用する
   layout 'index'
 
   def index
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = 'ログアウトしました。'
-    redirect_to root_url
+    redirect_to login_url
   end
 
   private
