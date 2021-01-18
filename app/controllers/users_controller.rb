@@ -2,7 +2,7 @@
 
 
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :edit]
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :followings, :followers]
  #Lapplication.html.erbを適用せずに
  #新たに作ったindex.html.erb(navとfooter無し)を適用する
  layout 'index'
@@ -11,12 +11,22 @@ class UsersController < ApplicationController
   def index
     # ページネーションを適用させるためにpage(params[:page])をつけている
     @users = User.order(id: :desc).page(params[:page]).per(5)
+    
+    
   end
 
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order(id: :desc).page(params[:page])
     counts(@user)
+    if logged_in?
+      # form_with用
+      # index.html.erbに投稿するフォームを設置するから
+      # @postにカラのインスタンスを代入しておく
+      # form_with(model: @post)として使用する
+      @post = current_user.posts.build
+    end
+    
   end
 
   def new
@@ -27,12 +37,39 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = 'ユーザを登録しました。'
+      flash[:success] = 'Registered user.'
       redirect_to @user
     else
-      flash.now[:danger] = 'ユーザの登録に失敗しました。'
+      flash.now[:danger] = 'Failed to register user.'
       render :new
     end
+  end
+
+  def edit 
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = 'Content is successfully updated !'
+      redirect_to user_url
+    else
+      flash.now[:danger] = 'Updating content failed . '
+      render :edit
+    end
+  end
+
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+    counts(@user)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+    counts(@user)
   end
 
   private

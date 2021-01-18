@@ -1,0 +1,25 @@
+
+<div class="text-primary water">Count the number of times of practicing pronunciation to use + or - button below !</div>
+<ul class="list-unstyled">
+  <% posts.each do |post| %>
+    <li class="mb-3">
+        <div>
+          <span class="text-muted">posted at <%= post.created_at %></span>
+        </div>
+        <div class="spinner_area">
+            <input  value="0" class="counter1" data-max="500" data-min="0">
+            <input type="button" value="＋" class="btnspinner" data-cal="1" data-target=".counter1">
+            <input type="button" value="－" class="btnspinner" data-cal="-1" data-target=".counter1">
+            <span class="black"><%= post.content %></span>
+        </div>
+        <div>
+            <% if current_user == post.user %>
+                <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+                <%= link_to "Edit the content", edit_post_path(post), class: 'btn btn-info btn-sm' %>
+            <% end %>
+        </div>
+    </li>
+  <% end %>
+  <%= paginate posts %>
+</ul>
+</div>

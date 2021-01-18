@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'section-test', to: 'sectiontests#index'
   get 'event', to: 'events#index'
   get 'nanzaness-originalwebapp', to: 'nanzanessoriginalwebapps#index'
+  
 
   resources :inquiries, only: [:index, :new, :create]
   
@@ -29,8 +30,22 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'signup-secret0495821', to: 'users#new'
   get 'webapp-toppages', to: 'webapptoppages#index'
-  resources :users, only: [:index, :show, :create, :edit, :update, :destroy]
+
+  # resourcesにはmemberとcollectionという
+  # URLを深堀するオプションを付与することができる
+  # memberとcollectionの違いはUserを:idで特定する必要のある
+  # pageであるかどうか、idで特定必要ならmemberを使用
+  resources :users do
+    member do
+      get :followings
+      get :followers
+    end
+  end
+
   resources :posts, only: [:create, :destroy, :edit, :update]
+  # Userがfollow, unfollowできるために必要なRouting
+  # なぜならfollow, unfollowするとは中間テーブルを保存 or 削除することであるから
+  resources :relationships, only: [:create, :destroy]
 end
 
 

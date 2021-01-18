@@ -1,13 +1,14 @@
+<div class="text-primary water">Count the number of times of practicing pronunciation to use + or - button below !</div>
 <ul class="list-unstyled">
   <% posts.each do |post| %>
-    <li class="media mb-3">
-      <img class="mr-2 rounded" src="" alt="">
-      <div class="media-body">
+    <li class="mb-3">
         <div>
-          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
+          <span class="text-muted">posted at <%= post.created_at %></span>
         </div>
-        <div>
-          <p><%= post.content %></p>
+        <div class="spinner_area">
+            <button id="btn">Count</button>
+            <span id="count">0</span>
+            <span class="black"><%= post.content %></span>
         </div>
         <div>
             <% if current_user == post.user %>
@@ -15,9 +16,8 @@
                 <%= link_to "Go to edit the content", edit_post_path(post), class: 'btn btn-danger btn-sm' %>
             <% end %>
         </div>
-        
-      </div>
     </li>
   <% end %>
   <%= paginate posts %>
 </ul>
+</div>

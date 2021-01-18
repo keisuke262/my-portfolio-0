@@ -10,11 +10,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = 'メッセージを投稿しました。'
+      flash[:success] = 'Successfully posted !'
       redirect_to webapp_toppages_url
     else  
       @posts = current_user.posts.order(id: :desc).page(params[:page])
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+      flash.now[:danger] = 'Posting faild . '
       render 'webapptoppages/index'
     end
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     # つまりcorrect_userの時点でUserに紐づいた投稿を
     # 取得できていなければこのdestroyメソッドは実行されない
     @post.destroy
-    flash[:success] = ' メッセージを削除しました。'
+    flash[:success] = ' Successfully deleted '
     # redirect_backはアクションが実行されたページに戻る
     # fallback_locationは保険的なもので、戻るべき
     # 場所が見つからない時に、戻る場所を指定するもの。
@@ -32,9 +32,19 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      flash[:success] = 'Content is updated successfully !'
+      redirect_to webapp_toppages_url
+    else
+      flash.now[:danger] = 'Updating post failed . '
+      render :edit
+    end
   end
 
   private
