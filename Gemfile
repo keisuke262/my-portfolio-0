@@ -63,3 +63,6 @@ gem 'kaminari'
 
 # slickによるCarousel実装に必要
 gem 'jquery-rails'
+
+# Userの画像アップロード用
+gem 'carrierwave'

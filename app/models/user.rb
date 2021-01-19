@@ -22,6 +22,8 @@ class User < ApplicationRecord
   # この記述によって、user.followersで自分をフォローしている人たちを取得できる
   has_many :followers, through: :reverses_of_relationship, source: :user
 
+  has_many :favorites, dependent: :destroy
+  has_many :favoriteposts, through: :favorites, source: :post
   # follow, unfollowするとは、中間テーブルのレコードを保存 or 削除すること
   def follow(other_user)
     unless self == other_user
@@ -36,5 +38,22 @@ class User < ApplicationRecord
 
   def following?(other_user)
     self.followings.include?(other_user)
+  end
+
+  def feed_posts
+    Post.where(user_id: self.following_ids + [self.id])
+  end
+
+  def favorite(post)
+    self.favorites.find_or_create_by(post_id: post.id)
+  end
+
+  def unfavorite(post)
+    favorite = self.favorites.find_by(post_id: post.id)
+    favorite.destroy if favorite
+  end
+
+  def favoriteing?(post)
+    self.favoriteposts.include?(post)
   end
 end

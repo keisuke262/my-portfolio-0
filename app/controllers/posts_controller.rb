@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Successfully posted !'
       redirect_to webapp_toppages_url
     else  
-      @posts = current_user.posts.order(id: :desc).page(params[:page])
+      @posts = current_user.feed_posts.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'Posting faild . '
       render 'webapptoppages/index'
     end

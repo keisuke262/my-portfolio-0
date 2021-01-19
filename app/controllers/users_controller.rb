@@ -2,7 +2,8 @@
 
 
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :edit, :followings, :followers]
+  before_action :require_user_logged_in, only:[:index, :show, :edit, :followings, :followers]
+  before_action :require_user_logged_in, only:[:index, :show, :edit, :favoritemicroposts]
  #Lapplication.html.erbを適用せずに
  #新たに作ったindex.html.erb(navとfooter無し)を適用する
  layout 'index'
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'Registered user.'
-      redirect_to @user
+      redirect_to webapp_toppages_url
     else
       flash.now[:danger] = 'Failed to register user.'
       render :new
@@ -72,10 +73,16 @@ class UsersController < ApplicationController
     counts(@user)
   end
 
+  def favoriteposts 
+    @user = User.find(params[:id])
+    @favoriteposts = @user.favoriteposts.page(params[:page])
+    counts(@user)
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :goal, :achieve, :password, :password_confirmation)
+    params.require(:user).permit(:name, :goal, :achieve, :password, :password_confirmation, :image)
   end
   
 end

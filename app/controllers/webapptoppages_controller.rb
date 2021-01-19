@@ -11,7 +11,7 @@ class WebapptoppagesController < ApplicationController
       # @postにカラのインスタンスを代入しておく
       # form_with(model: @post)として使用する
       @post = current_user.posts.build
-      @posts = current_user.posts.order(id: :desc).page(params[:page])
+      @posts = current_user.feed_posts.order(id: :desc).page(params[:page])
     end
   end
 end

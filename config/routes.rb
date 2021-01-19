@@ -35,10 +35,16 @@ Rails.application.routes.draw do
   # URLを深堀するオプションを付与することができる
   # memberとcollectionの違いはUserを:idで特定する必要のある
   # pageであるかどうか、idで特定必要ならmemberを使用
-  resources :users do
-    member do
+  resources :users, only: [:index, :show, :new, :create, :edit, :update] do
+    member do 
       get :followings
       get :followers
+    end
+  end
+
+  resources :users, only: [:index, :show, :new, :create, :edit, :update] do
+    member do
+      get :favoriteposts
     end
   end
 
@@ -46,6 +52,7 @@ Rails.application.routes.draw do
   # Userがfollow, unfollowできるために必要なRouting
   # なぜならfollow, unfollowするとは中間テーブルを保存 or 削除することであるから
   resources :relationships, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
 end
 
 
