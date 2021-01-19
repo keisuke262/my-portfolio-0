@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   def index
     # ページネーションを適用させるためにpage(params[:page])をつけている
     @users = User.order(id: :desc).page(params[:page]).per(5)
-    
-    
   end
 
   def show
@@ -27,7 +25,6 @@ class UsersController < ApplicationController
       # form_with(model: @post)として使用する
       @post = current_user.posts.build
     end
-    
   end
 
   def new
@@ -52,6 +49,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    
     if @user.update(user_params)
       flash[:success] = 'Content is successfully updated !'
       redirect_to user_url
@@ -65,18 +63,39 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
     counts(@user)
+    if logged_in?
+      # form_with用
+      # index.html.erbに投稿するフォームを設置するから
+      # @postにカラのインスタンスを代入しておく
+      # form_with(model: @post)として使用する
+      @post = current_user.posts.build
+    end
   end
   
   def followers
     @user = User.find(params[:id])
     @followers = @user.followers.page(params[:page])
     counts(@user)
+    if logged_in?
+      # form_with用
+      # index.html.erbに投稿するフォームを設置するから
+      # @postにカラのインスタンスを代入しておく
+      # form_with(model: @post)として使用する
+      @post = current_user.posts.build
+    end
   end
 
   def favoriteposts 
     @user = User.find(params[:id])
     @favoriteposts = @user.favoriteposts.page(params[:page])
     counts(@user)
+    if logged_in?
+      # form_with用
+      # index.html.erbに投稿するフォームを設置するから
+      # @postにカラのインスタンスを代入しておく
+      # form_with(model: @post)として使用する
+      @post = current_user.posts.build
+    end
   end
 
   private
@@ -84,5 +103,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :goal, :achieve, :password, :password_confirmation, :image)
   end
-  
 end

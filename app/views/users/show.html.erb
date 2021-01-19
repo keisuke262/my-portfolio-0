@@ -2,10 +2,16 @@
     <div class="row">
         <div class="col-sm-3">
         <!--登録数の表示-->
-            <div class="badge badge-info"><%= @count_posts %></div>
+            <div id="post-count"><%= @count_posts %></div>
             <p>シルバー</p>
             <p>レベルアップまであと30個</p>
-            <p>写真が入ります</p>
+            <div>
+                <% if @user.image? %>
+                    <%= image_tag @user.image.thumb.url %>
+                <% else %>
+                    <%= image_tag "/assets/default.jpg", :size => '100×100' %>
+                <% end %>
+            </div>
             <div>
                 <p>Name: <%= @user.name %></p>
                 <p>Goal : <%= @user.goal %></p>

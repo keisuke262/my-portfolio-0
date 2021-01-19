@@ -171,6 +171,24 @@ $(function () {
 
 });
 
+// 投稿数の数に応じてメダル設置＆背景色 or 枠線を変更する
+
+ var post_count = user.posts.count
+ var pc = document.getElementById('post-count')
+
+ 
+if (post_count > 10) {
+  pc.style.color = 'blue'
+
+  } else if (post_count > 3) {
+    pc.style.color = 'red'
+  }
+  else {
+    pc.style.color = 'yellow'
+  }
+
+
+
 
 
 

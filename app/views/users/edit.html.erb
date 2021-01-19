@@ -1,13 +1,21 @@
 <h1>Edit the profile</h1>
 
 <%= form_with(model: @user, local: true) do |f| %>
+    <% if @user.image? %>
+        <%= image_tag @user.image.url %>
+    <% else %>
+        <%= image_tag "/assets/default.jpg", :size => '100×100' %>
+    <% end %>
+    <button type="button" class="btn btn-outline-secondary rounded-pill">
+        <%= f.file_field :image, accept: 'image/jpeg, image/gif, image/png' %>
+    </button>
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name, class: 'form-control' %>
     <%= f.label :goal, 'Goal' %>
     <%= f.text_field :goal, class: 'form-control' %>
     <%= f.label :achieve, 'What will you do to achieve goal ?' %>
     <%= f.text_field :achieve, class: 'form-control' %>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
 <% end %>
 
 <%= link_to 'Back to a list of all the posts', webapp_toppages_path %>

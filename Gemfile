@@ -66,3 +66,6 @@ gem 'jquery-rails'
 
 # Userの画像アップロード用
 gem 'carrierwave'
+
+# minimagick(画像のresize)
+gem 'mini_magick'

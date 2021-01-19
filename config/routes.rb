@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   get 'signup-secret0495821', to: 'users#new'
   get 'webapp-toppages', to: 'webapptoppages#index'
 
+  post 'users/:id/followings' => 'users#followings'
+  post 'users/:id/followers' => 'users#followers'
+  post 'users/:id/favoriteposts' => 'users#favoriteposts'
+
   # resourcesにはmemberとcollectionという
   # URLを深堀するオプションを付与することができる
   # memberとcollectionの違いはUserを:idで特定する必要のある
@@ -54,5 +58,4 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
 end
-
 

@@ -2,6 +2,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :goal, presence: true, length: { maximum: 255 }
   validates :achieve, presence: true, length: { maximum: 255 }
+  # モデルの関連づけ(UserとImage)
+  # カラムの名前をmount_uploaderに指定
+  mount_uploader :image, ImageUploader
   # password_digestカラムを用意し、
   #モデルファイルにhas_secure_passwordを記述すれば
   #ログイン認証が可能になる
@@ -22,7 +25,7 @@ class User < ApplicationRecord
   # この記述によって、user.followersで自分をフォローしている人たちを取得できる
   has_many :followers, through: :reverses_of_relationship, source: :user
 
-  has_many :favorites, dependent: :destroy
+  has_many :favorites, dependent: :destroy     
   has_many :favoriteposts, through: :favorites, source: :post
   # follow, unfollowするとは、中間テーブルのレコードを保存 or 削除すること
   def follow(other_user)

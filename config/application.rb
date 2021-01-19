@@ -29,5 +29,8 @@ module Nanzaness
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # CarrierWaveを導入するも, uninitialized constant User::ImageUploader
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
   end
 end

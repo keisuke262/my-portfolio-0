@@ -3,8 +3,8 @@ class Post < ApplicationRecord
   # これによってUserの紐づけ無しではPostを保存できない
   # また、posts.userである投稿に紐づいたUserを取得できる
   belongs_to :user
-
-  validates :content, presence: true, length: { maximum: 255 }
-
+  has_many :favorites, dependent: :destroy
+  validates :content, presence: true  #, length: { maximum: 500 }
+  
   
 end

@@ -5,7 +5,7 @@
             <div class="badge badge-info"><%= @count_posts %></div>
             <p>シルバー</p>
             <p>レベルアップまであと30個</p>
-            <p>写真が入ります</p>
+            <div><%= image_tag @user.image.thumb.url %></div>
             <div>
                 <p>Name: <%= @user.name %></p>
                 <p>Goal : <%= @user.goal %></p>
