@@ -1,10 +1,11 @@
 <!--ユーザ一覧はユーザ一覧ページ・followページ・followerページで必要なのでパーシャル化しておく-->
+
 <h1 class="text-center alluser">ALL USERS</h1>
 <% if users.any? %>
     <div class="container" id="user-show">
         <div class="row">
             <% users.each do |user| %>
-                <div class="col-4">
+                <div class="col-4 col-sm-5 offset-sm-1 col-xl-4">
                     <div>
                         <div class="user-profile">
                             <% if user.image? %>
@@ -12,7 +13,7 @@
                             <% else %>
                                 <%= image_tag "/assets/default.jpg" %>
                             <% end %>
-                            <span><%= render 'relationships/follow_button', user: user %></span>
+                            <span class="like-button"><%= render 'relationships/follow_button', user: user %></span>
                             <h1><%= user.name %></h1>
        
                             <%= link_to 'View profile', user_path(user) %>
@@ -26,11 +27,7 @@
         <%= paginate users %>
     </div>
 <% end %>
-  
-            
 
-
-    
 
 
 

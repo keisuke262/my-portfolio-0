@@ -1,6 +1,6 @@
 <div class="container" id="user-show">
     <div class="row">
-        <div class="col-12 col-sm-10 offset-sm-1">
+        <div class="col-12">
             <div class="row">
                 <div class="col-3 offset-1">
                     <% if @user.image? %>
@@ -9,8 +9,8 @@
                         <%= image_tag "/assets/default.jpg" %>
                     <% end %>
                 </div>
-                <!--col-sm-4ここまで-->
-                <div class="col-7">
+                <!--col-3ここまで-->
+                <div class="col-7 ">
                     <div class="row">
                         <div class="col-2">
                             <%= @user.name %>
@@ -30,11 +30,11 @@
             <!--rowここまで-->
         </div>
         <!--col-sm-12ここまで-->
-        <div class="col-12 col-sm-10 offset-sm-1">
+        <div class="col-12">
             <div class="content">
                 <div class="row">
                     <!--登録数の表示-->
-                    <div class="circle col-2 offset-1"><span class="texts"><div class="bold">Total Posts</div><div class="bold"><%= @count_posts %></div></span></div>
+                    <div class="circle col-2 offset-1 col-md-3 offset-md-1 col-lg-2 offset-lg-1"><span class="texts"><div class="bold">Total Posts</div><div class="bold"><%= @count_posts %></div></span></div>
                     <div class="col-8 medal">
                         <p class="text-center bold">Silver</p>
                         <p class="text-center">30 more to level up gold</p>
@@ -50,7 +50,7 @@
             <div id="modal01" class="c-modal js-modal">
                 <div class="c-modal_bg js-modal-close"></div>
                 <div class="c-modal_content _lg">
-                    <div class="c-modal_content_inner">
+                    <div class="c-modal_content_inner text-center post">
                         <p>Share your original phrase</p>
                         <%= form_with(model: @post, local: true) do |f| %>
                             <div class="form-group">
@@ -64,7 +64,7 @@
             </div>
         </div>
         <!--col-sm-12ここまで-->
-        <div class="content2 col-12 col-sm-10 offset-sm-1">
+        <div class="content2 col-12">
             <ul class="nav nav-tabs nav-justified">
                 <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Posts <span class="badge badge-secondary"><%= @count_posts %></span></a></li>
                 <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Following <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
