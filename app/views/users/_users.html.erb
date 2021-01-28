@@ -1,20 +1,39 @@
 <!--ユーザ一覧はユーザ一覧ページ・followページ・followerページで必要なのでパーシャル化しておく-->
+<h1 class="text-center alluser">ALL USERS</h1>
 <% if users.any? %>
-<!--list-unstyledはBootstrapで、左側の余白をなくし, 黒点を消すことができる-->
-    <ul class="list-unstyled">
-        <% users.each do |user| %>
-            <li class="media">
-                <!--プロフィール画像が入ります-->
-                <div class="media-body">
+    <div class="container" id="user-show">
+        <div class="row">
+            <% users.each do |user| %>
+                <div class="col-4">
                     <div>
-                        <%= user.name %>
-                    </div>
-                    <div>
-                        <p><%= link_to 'View profile', user_path(user) %></p>
+                        <div class="user-profile">
+                            <% if user.image? %>
+                                <%= image_tag user.image.url %>
+                            <% else %>
+                                <%= image_tag "/assets/default.jpg" %>
+                            <% end %>
+                            <span><%= render 'relationships/follow_button', user: user %></span>
+                            <h1><%= user.name %></h1>
+       
+                            <%= link_to 'View profile', user_path(user) %>
+                        </div>
                     </div>
                 </div>
-            </li>
-        <% end %>
-    </ul>
-    <%= paginate users %>
+            <% end %>
+        </div>
+    </div>
+    <div class="paginate">
+        <%= paginate users %>
+    </div>
 <% end %>
+  
+            
+
+
+    
+
+
+
+
+
+

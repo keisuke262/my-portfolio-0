@@ -1,54 +1,80 @@
 <div class="container" id="user-show">
     <div class="row">
-        <div class="col-sm-3">
-        <!--登録数の表示-->
-            <div class="badge badge-info"><%= @count_posts %></div>
-            <p>シルバー</p>
-            <p>レベルアップまであと30個</p>
-            <div><%= image_tag @user.image.thumb.url %></div>
-            <div>
-                <p>Name: <%= @user.name %></p>
-                <p>Goal : <%= @user.goal %></p>
-                <p>Achieve : <%= @user.achieve %></p>
-            </div>
-            <div>
-                <% if current_user == @user %>
-                    <%= link_to "Edit the profile", edit_user_path(@user), class: 'btn btn-info btn-sm' %>
-                <% end %>
-            </div>
-            <%= render 'relationships/follow_button', user: @user %>
-        </div>
-        <div class="col-sm-9">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-body">
-                <!-- modal open -->
-                    <h5 class="card-title">Post your original phrase</h5>
-                    <p class="card-text"><a class="js-modal-open" href="" data-target="modal01">Post</a></p>
+        <div class="col-12 col-sm-10 offset-sm-1">
+            <div class="row">
+                <div class="col-3 offset-1">
+                    <% if @user.image? %>
+                        <%= image_tag @user.image.url %>
+                    <% else %>
+                        <%= image_tag "/assets/default.jpg" %>
+                    <% end %>
                 </div>
+                <!--col-sm-4ここまで-->
+                <div class="col-7">
+                    <div class="row">
+                        <div class="col-2">
+                            <%= @user.name %>
+                        </div>
+                        <div class="col-4 edit">
+                            <% if current_user == @user %>
+                                <%= link_to "Edit profile", edit_user_path(@user), class: 'btn btn-info btn-block' %>
+                            <% end %>
+                            <%= render 'relationships/follow_button', user: @user %>
+                        </div>
+                    </div>
+                    <p class="profile"><span class="posts"><%= @count_posts %><span class="posts1">Posts</span><span class="followers"><%= @count_followers %><span class="followers1">Followers</span><span class="following"><%= @count_followings %><span class="following1">Following</span></p>
+                    <p class="goal">Goal : <%= @user.goal %><br>To achieve goal : <%= @user.achieve %></p>
+                </div>
+                <!--col-sm-8ここまで-->
+            </div>
+            <!--rowここまで-->
+        </div>
+        <!--col-sm-12ここまで-->
+        <div class="col-12 col-sm-10 offset-sm-1">
+            <div class="content">
+                <div class="row">
+                    <!--登録数の表示-->
+                    <div class="circle col-2 offset-1"><span class="texts"><div>Total Posts</div><div><%= @count_posts %></div></span></div>
+                    <div class="col-8 medal">
+                        <p class="text-center">Bronze</p>
+                        <p class="text-center">30 more to level up silver</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content1">
+                <!-- modal open -->
+                <h5 class="text-center post">Share your original phrase</h5>
+                <p class="text-center post"><a class="js-modal-open" href="" data-target="modal01">Post</a></p>
             </div>
             <!-- modal -->
             <div id="modal01" class="c-modal js-modal">
-            <div class="c-modal_bg js-modal-close"></div>
+                <div class="c-modal_bg js-modal-close"></div>
                 <div class="c-modal_content _lg">
                     <div class="c-modal_content_inner">
-                        <p>Post your original phrase</p>
+                        <p>Share your original phrase</p>
                         <%= form_with(model: @post, local: true) do |f| %>
                             <div class="form-group">
                                 <%= f.text_area :content, class: 'form-control', rows: 5 %>
                             </div>
                             <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
                         <% end %>
-                        <a class="js-modal-close c-modal_close" href=""><span>閉じる</span></a>
+                        <a class="js-modal-close c-modal_close" href=""><span>close</span></a>
                     </div>
                 </div>
             </div>
+        </div>
+        <!--col-sm-12ここまで-->
+        <div class="content2 col-12 col-sm-10 offset-sm-1">
             <ul class="nav nav-tabs nav-justified">
-                <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Posts</a></li>
-                <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+                <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Posts <span class="badge badge-secondary"><%= @count_posts %></span></a></li>
+                <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Following <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
                 <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
-                <li class="nav-item"><a href="<%= favoriteposts_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(favoriteposts_user_path(@user)) %>">Favorite <span class="badge badge-secondary"><%= @count_favoriteposts %></span></a></li>
+                <li class="nav-item"><a href="<%= favoriteposts_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(favoriteposts_user_path(@user)) %>">Likes <span class="badge badge-secondary"><%= @count_favoriteposts %></span></a></li>
             </ul>
             <%= render 'posts/posts', posts: @favoriteposts %>
         </div>
+        <!--col-sm-12ここまで-->
     </div>
+    <!--rowここまで-->
 </div>
+<!--containerここまで-->

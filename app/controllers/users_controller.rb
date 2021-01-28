@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def index
     # ページネーションを適用させるためにpage(params[:page])をつけている
-    @users = User.order(id: :desc).page(params[:page]).per(5)
+    @users = User.order(id: :desc).page(params[:page]).per(6)
   end
 
   def show
@@ -32,32 +32,32 @@ class UsersController < ApplicationController
   end
 
   def create 
-    @user = User.new(user_params)
+    @user = User.new(user_params1)
 
     if @user.save
-      flash[:success] = 'Registered user.'
-      redirect_to webapp_toppages_url
+      flash[:success] = 'Welcome to NED !'
+      redirect_to login_path
     else
-      flash.now[:danger] = 'Failed to register user.'
+      flash.now[:danger] = 'Failed'
       render :new
     end
   end
 
-  def edit 
+  def edit
     @user = User.find(params[:id])
   end
 
-  def update
-    @user = User.find(params[:id])
-    
-    if @user.update(user_params)
-      flash[:success] = 'Content is successfully updated !'
-      redirect_to user_url
-    else
-      flash.now[:danger] = 'Updating content failed . '
-      render :edit
-    end
+def update
+  @user = User.find(params[:id])
+
+  if @user.update(user_params)
+    flash[:success] = 'Your profile is updated'
+    redirect_to webapp_toppages_url
+  else
+    flash.now[:danger] = 'Failed '
+    render :edit
   end
+end
 
   def followings
     @user = User.find(params[:id])
@@ -101,6 +101,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :goal, :achieve, :password, :password_confirmation, :image)
+    params.require(:user).permit(:name, :goal, :achieve, :image)
   end
+
+  def user_params1
+    params.require(:user).permit(:name, :password, :password_confirmation)
+  end
+
+  
 end

@@ -3,12 +3,12 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <!-- 画面左上に表示するサイト名のリンクとして適切な表示をするための指定を追加 -->
         <% if logged_in? %>
-            <a class="navbar-brand" href="<%= webapp_toppages_path %>">NANAZAN UNIVERSITY ESS</a>
+            <a class="navbar-brand" href="<%= webapp_toppages_path %>">NED</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon">
             </button>
         <% else %>
-        <a class="navbar-brand" href="/">NANAZAN UNIVERSITY ESS</a>
+        <%= image_tag 'logo1.1.1' %><a class="navbar-brand" href="/">NANAZAN UNIVERSITY ESS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon">
         </button>
@@ -21,10 +21,9 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
                         <ul class="dropdown-menu dropdown-menu-right">  
-                            <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>
+                            <li class="dropdown-item"><%= link_to 'Profile', user_path(current_user) %></li>
                             <li class="dropdown-divider"></li>
-                            <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
-
+                            <li class="dropdown-item"><%= link_to 'Log out', logout_path, method: :delete, data: { confirm: "Are you sure you want to log out of NED?" } %></li>
                         </ul>
                     </li>
                 <% else %>

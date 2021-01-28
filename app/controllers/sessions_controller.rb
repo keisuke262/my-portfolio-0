@@ -18,16 +18,16 @@ class SessionsController < ApplicationController
     password = params[:session][:password]
     if login(name, password)
       flash[:success] = 'Successfully logged in !'
-      redirect_to @user
+      redirect_to webapp_toppages_url
     else
-      flash.now[:danger] = 'ログインに失敗しました。'
+      flash.now[:danger] = 'Failed'
       render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = 'ログアウトしました。'
+    flash[:success] = 'Successfully Log out'
     redirect_to login_url
   end
 

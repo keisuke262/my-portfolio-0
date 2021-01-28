@@ -173,6 +173,7 @@ $(function () {
 
 // 投稿数の数に応じてメダル設置＆背景色 or 枠線を変更する
 
+/*
  var post_count = user.posts.count
  var pc = document.getElementById('post-count')
 
@@ -187,96 +188,10 @@ if (post_count > 10) {
     pc.style.color = 'yellow'
   }
 
+  */
 
 
 
-
-
-
-
-/*
-
-// ページが読み込まれたら実行
-window.onload = function() {
-
-  // オブジェクトと変数の準備
-  var count_disp = document.getElementById("disp_count");  
-  var count_up_btn = document.getElementById("btn_count_up");
-  var reset_btn = document.getElementById("btn_reset");
-  var count_value = 0;
-
-  // オブジェクトと変数の準備
-  var count_disp = document.getElementById("disp_count");  
-  var count_up_btn = document.getElementById("btn_count_up");
-  var count_value = 0;
-
-  // カウントアップボタンクリック処理
-  count_up_btn.addEventListener('click', () => {
-    count_value += 1;
-    count_disp.innerHTML = count_value;
-
-  });
-
-   // カウントアップボタンクリック処理
-   count_up_btn.addEventListener('mousedown', () => {
-    count_up_btn.style.backgroundColor = "#00FF00";
-
-  });
-
-   // カウントアップボタンクリック処理
-   count_up_btn.addEventListener('mouseup', () => {
-    count_up_btn.style.backgroundColor = "";
-
-  });
-};
-
-*/
-    
- 
-  
-/*
-// 発音回数を記録する
-// ページが読み込まれたら実行
-window.onload = function() {
-
-  // オブジェクトと変数の準備
-  var count_press = document.getElementById("press_count");  
-  var count_up_btn = document.getElementById("btn_count_up");
-  var count_down_btn = document.getElementById("btn_count_down");
-  var count_value = 0;
-
-  // カウントアップボタンクリック処理
-  count_up_btn.onclick = function (){
-       count_value += 1;
-       count_press.innerHTML = count_value;
-  };
-  // カウントアップボタンのマウスダウン処理
-  count_up_btn.onmousedown = function() {
-       count_up_btn.style.backgroundColor = "#00FF00";
-  }
-  // カウントアップボタンのマウスアップ処理
-  count_up_btn.onmouseup = function() {
-       count_up_btn.style.backgroundColor = "";
-  }
-
-  // カウントアップボタンクリック処理
-  count_down_btn.onclick = function (){
-    if (count_value >= 1) {
-      count_value -= 1;
-      count_press.innerHTML = count_value;
-    }
-  };
-// カウントアップボタンのマウスダウン処理
-count_down_btn.onmousedown = function() {
-    count_down_btn.style.backgroundColor = "#00FF00";
- }
- // カウントアップボタンのマウスアップ処理
- count_down_btn.onmouseup = function() {
-  count_down_btn.style.backgroundColor = "";
- }
-};
-
-*/
 
 
 

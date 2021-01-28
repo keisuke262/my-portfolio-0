@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
-  validates :goal, presence: true, length: { maximum: 255 }
-  validates :achieve, presence: true, length: { maximum: 255 }
+  # validates :password, presence: true, length: { minimum: 8 }
+  # validates :goal, presence: true, length: { maximum: 255 }
+  # validates :achieve, presence: true, length: { maximum: 255 }
   # モデルの関連づけ(UserとImage)
   # カラムの名前をmount_uploaderに指定
   mount_uploader :image, ImageUploader

@@ -5,13 +5,13 @@ class FavoritesController < ApplicationController
     post = Post.find(params[:post_id])
     current_user.favorite(post)
     flash[:success] = 'Liked post.'
-    redirect_back(fallback_location: webapp_toppages_url) 
+    redirect_to webapp_toppages_url
   end
 
   def destroy
     post = Post.find(params[:post_id])
     current_user.unfavorite(post)
     flash[:success] = 'Unliked post.'
-    redirect_back(fallback_location: webapp_toppages_url) 
+    redirect_to webapp_toppages_url
   end
 end

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'section-test', to: 'sectiontests#index'
   get 'event', to: 'events#index'
   get 'nanzaness-originalwebapp', to: 'nanzanessoriginalwebapps#index'
+  get 'study', to: 'studies#index'
   
 
   resources :inquiries, only: [:index, :new, :create]
@@ -28,25 +29,27 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   #ActionMailerの内容を開発(ローカル)環境で確認できるようにするための設定
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  get 'signup-secret0495821', to: 'users#new'
+  get 'signup', to: 'users#new'
   get 'webapp-toppages', to: 'webapptoppages#index'
 
   post 'users/:id/followings' => 'users#followings'
   post 'users/:id/followers' => 'users#followers'
   post 'users/:id/favoriteposts' => 'users#favoriteposts'
+  # post 'webapp-toppages' => 'webapptoppages#index'
+
 
   # resourcesにはmemberとcollectionという
   # URLを深堀するオプションを付与することができる
   # memberとcollectionの違いはUserを:idで特定する必要のある
   # pageであるかどうか、idで特定必要ならmemberを使用
-  resources :users, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :users, only: [:index, :show, :create, :edit, :update] do
     member do 
       get :followings
       get :followers
     end
   end
 
-  resources :users, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :users, only: [:index, :show, :create, :edit, :update] do
     member do
       get :favoriteposts
     end

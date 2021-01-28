@@ -37,6 +37,8 @@
    ,YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
  }
 
+ /*
+
  @media only screen and (max-width: 576px) {
   // ウィンドウ幅が576px以下の時に適用される
  body {
@@ -44,6 +46,8 @@
  }
  
 }
+
+*/
 
 
 /*
@@ -544,9 +548,38 @@ li {
 @media only screen and (min-width: 576px) {
   // ウィンドウ幅が576px以上の時に適用される
  .btn {
-   font-size: 1rem;
+   font-size: 22px;
  }
 }
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+ .user-top .btn  {
+   font-size: 23px;
+ }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+ .user-top .btn {
+   font-size: 20px;
+ }
+}
+
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+ .post-content {
+   font-size: 25px;
+ }
+}
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が576px以上の時に適用される
+ .post-content {
+   font-size: 23px;
+ }
+}
+
 
 
 @media only screen and (min-width: 0px) {
@@ -1536,12 +1569,71 @@ h3 {
 
 
 // USerのshowpage
-
-
-
-#user-show {
-  margin-top: 200px;
+@media only screen and (min-width: 0px) {
+  #user-show {
+    margin-top: 15rem;
+  }
 }
+
+
+@media only screen and (min-width: 1025px) {
+  #user-show {
+    margin-top: 13rem;
+  }
+}
+
+
+@media only screen and (min-width: 0px) {
+  //　スマホ縦用
+  #user-show img {
+    // 円形にする
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  //　スマホ横用
+  #user-show img {
+    // 円形にする
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+  //　タブレット用
+  #user-show img {
+    // 円形にする
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  // PC用
+  #user-show img {
+    // 円形にする
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+  }
+}
+
+
+
+
+
+
+
+
 
 // 役に立つCSS一覧
 .red{
@@ -1724,4 +1816,533 @@ h3 {
   position: absolute;
   top: 13px;
   right: 10px;
+}
+
+// profileの部分
+
+@media only screen and (min-width: 0px) {
+  
+  .content {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-top: 50px;
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  
+  .content {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-top: 50px;
+  }
+  
+}
+
+@media only screen and (min-width: 1025px) {
+  .content {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-top: 50px;
+  }
+  
+}
+
+
+
+// content1(投稿場所)の設定
+
+
+
+@media only screen and (min-width: 0px) {
+  
+  .content1 {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin: 5rem auto 0;
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  .content1 {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-top: 50px;
+
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  
+  .content2 {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-top: 50px;
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  .content2 {
+
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-top: 50px;
+  }
+}
+
+
+
+.content1 a {
+  display:block;
+  height:50px;
+  margin-top: 30px;
+  line-height:50px;
+  background:tomato;
+  color:#fff;
+  border-radius:25px;
+  // box-shadow:0 5px 0 gold;
+  text-decoration:none;
+  text-align:center;
+
+}
+
+.content1 h5 {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.post1 {
+  padding-top: 10px;
+
+}
+
+.post2 {
+  padding-top: 10px;
+  padding-bottom: 5px;
+
+}
+
+.content p {
+  margin-bottom: 0;
+}
+
+// 投稿と投稿の間の線を入れる
+.post-border {
+  border-bottom: 1px solid rgb(235, 238, 240);;
+  padding: 20px 0;
+}
+
+.account {
+  padding-top: 5rem;
+}
+
+
+.login {
+  padding-top: 10rem;
+}
+
+
+.name {
+  margin-top: 5rem;
+}
+
+.password {
+  margin-top: 3rem;
+}
+
+.passwordcon {
+  margin-top: 3rem;
+}
+
+.signup {
+  margin-top: 3rem;
+}
+
+.login-button {
+  margin-top: 3rem;
+}
+
+.username {
+  font-weight: bold;
+  color: black;
+  font-size: 2.5rem;
+}
+
+
+
+
+.posts {
+  margin-left: -2.1rem;
+}
+
+.following {
+  margin-left: 4rem;
+}
+
+.followers {
+  margin-left: 4rem;
+}
+
+
+.posts1 {
+  margin-left: 10px;
+}
+
+.following1 {
+  margin-left: 10px;
+}
+
+.followers1 {
+  margin-left: 10px;
+}
+
+.goal {
+  margin-left: -2.1rem;
+  margin-top: -30px;
+}
+
+.profile {
+  margin-top: 10px;
+}
+
+
+@media only screen and (min-width: 0px) {
+  .edit .btn {
+    font-size: 20px;
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  .edit .btn {
+    font-size: 20px;
+  }
+}
+
+// 投稿数を円の中に表示する
+
+@media only screen and (min-width: 0px) {
+  .circle {
+    // 円形にする
+    border-radius: 50%;
+    // width: 160px;
+    height: 150px;
+    object-fit: cover;
+    background-color: silver;
+    text-align: center;
+    line-height: 39px;
+    display: inline-block;
+  
+  }
+  
+  .texts {
+    margin: 100px;
+    
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  .circle {
+    // 円形にする
+    border-radius: 50%;
+    // width: 160px;
+    height: 145px;
+    object-fit: cover;
+    background-color: silver;
+    text-align: center;
+    line-height: 36px;
+    display: inline-block;
+
+  
+  }
+  
+  .texts {
+    margin: 100px;
+
+  }
+}
+
+
+.medal {
+  margin-top: 30px;
+}
+
+
+.image-edit {
+  margin-top: -25px;
+  margin-bottom: 50px;
+}
+
+.change-pro {
+  margin-left: -22px; 
+}
+
+
+@media only screen and (min-width: 0px) {
+  
+  .edit-content {
+    padding: 60px 10px;
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  
+  .edit-content {
+    padding: 60px 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  
+  .cancel {
+    margin-left : 10px;
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  
+  .cancel {
+    margin-left : 2px;
+  }
+}
+
+
+@media only screen and (min-width: 0px) {
+  
+  .done {
+    margin-left : 198px;
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  
+  .done {
+    margin-left : -28px;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 769px) {
+  
+  .done {
+    margin-left : 6px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  
+  .done {
+    margin-left : 30px;
+  }
+}
+
+
+//　User一覧の設定
+
+.user-profile{
+  width:300px;
+  // margin:0 auto;
+  padding:2em;
+  background:#fff;
+  border:#ddd 5px solid;
+  border-radius:10px;
+  margin-top: 30px;
+}
+.user-profile img{
+  width:100%;
+  height:auto;
+  border-radius:30px 0;
+  margin-left: 20px;
+}
+.user-profile span{
+  display:inline-block;
+  margin:1em 0 0 0;
+  // background:gold;
+  font-size:12px;
+  padding:.5em 1em;
+  border-radius:.5em;
+}
+.user-profile h1{
+  margin:1em 0;
+  font-size:20px;
+  font-weight:bold;
+}
+.user-profile p{
+  line-height:1.6;
+}
+.user-profile a{
+  display:block;
+  height:50px;
+  margin:1em 0;
+  line-height:50px;
+  background:tomato;
+  color:#fff;
+  border-radius:25px;
+  box-shadow:0 5px 0 gold;
+  text-decoration:none;
+  text-align:center;
+}
+
+
+
+@media only screen and (min-width: 0px) {
+  
+  .paginate {
+    margin-left: 310px;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  
+  .paginate {
+    margin-left: 310px;
+    padding-top: 10px;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 769px) {
+  
+  .paginate {
+    margin-left: 310px;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  
+  .paginate {
+    margin-left: 520px;
+    padding-top: 10px;
+  }
+}
+
+
+.alluser {
+  margin-bottom: -120px;
+  padding-top: 30px;
+}
+
+@media only screen and (min-width: 0px) {
+  //　スマホ縦用
+  .form-control{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  //　スマホ横用
+  .form-control{
+    font-size: 20px;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+  //　タブレット用
+  .form-control{
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  // PC用
+  .form-control{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  //　スマホ縦用
+  .post p {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  //　スマホ横用
+  .post p {
+    font-size: 30px;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+  //　タブレット用
+  .post p {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  // PC用
+  .post  p {
+    font-size: 28px;
+  }
 }
