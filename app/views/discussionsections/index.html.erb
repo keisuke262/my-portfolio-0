@@ -15,19 +15,13 @@ function drawChart() {
 // 配列からデータの生成
   var data = google.visualization.arrayToDataTable([
     ['学部'   , '%'],
-    ['外国語(英米・ドイツ)' , 4 ],
-    ['国際教養' , 6 ],
-    ['経済' , 1 ],
-    ['経営' ,  1 ],
-    ['法律' , 1 ],
     ['総合政策' , 1],
-    ['人文' , 1 ]
   ]);
  
    
     // オプションの設定
   var options = {
-    title: 'Guideセクションの学部別算出  ( 単位：% )',
+    title: 'Discussionセクションの学部別算出  ( 単位：% )',
     is3D: true
   };          
               
@@ -57,13 +51,13 @@ function drawChart1() {
 // 配列からデータの生成
   var data = google.visualization.arrayToDataTable([
     ['男女比'   , '%'],
-    ['male' , 8 ],
-    ['female' , 7 ],
+    ['male' , 0 ],
+    ['female' , 1 ],
   ]);
   
     // オプションの設定
   var options = {
-    title: 'Guideセクションの男女比  ( 単位：% )',
+    title: 'Discussionセクションの男女比  ( 単位：% )',
     is3D: true
   };          
          
@@ -92,8 +86,8 @@ function drawChart2() {
 // 配列からデータの生成
   var data = google.visualization.arrayToDataTable([
     ['学年比'   , '%'],
-    ['1年次' , 7 ],
-    ['２年次' , 8 ],
+    ['1年次' , 0 ],
+    ['２年次' , 1 ],
   ]);
  
    
@@ -101,7 +95,7 @@ function drawChart2() {
      
     // オプションの設定
   var options = {
-    title: 'Guideセクションの学年比  ( 単位：% )',
+    title: 'Discussionセクションの学年比  ( 単位：% )',
     is3D: true
   };          
              
@@ -130,35 +124,49 @@ function drawChart2() {
     <div id="main" class="col-12 col-sm-8">
         <h1 class="text-center">Discussionセクション</h1>
         <div class="text-center mt-5"><%= image_tag 'Discussion1', :width => '100%' %></div>
-        <h2 class="mt-4">活動</h2>
-        <h3 class="mt-4">活動日時・場所</h3>
-        <p class="mt-4">活動日時 : <br>
-活動場所 : コロナ禍ではZoomで活動を行っていています。通常であれば大学内の教室を借りて活動をします。
+        <p class="mt-4">南山大学ESSのディスカッションセクションでは、<span class="bold">主に社会問題や法律関係をテーマとして、メンバーで英語でディスカッションをし、
+最終的には問題解決案を提案します。</span></p>
+        <h2 class="mt-4">1. 活動</h2>
+        <h3 class="mt-4">1.1 活動日時・場所</h3>
+        <p class="mt-4">ディスカッションセクションは<span class="bold under">毎週火曜日と木曜日の17時から19時</span>
+        に南山大学構内のR棟に集まって、活動をしています。</p>
+        <h3>1.2 コロナ禍での活動</h3>
+        <p>※2021年3月時点では、ディスカッションセクションのメンバーが極端に不足しており、
+        活動を休止しております。</p>
+        <h3>1.3 コロナ以前の活動</h3>
+        <p>南山大学ESSのディスカッションメンバーで、事前に決めておいた議題について
+        <span class="bold">英語でディスカッションをします。</p>
+        <p>ディスカッションのお題に対して自分が詳しくなければ、事前に調べておいて知識を蓄えておきます。</p>
+        <p>そして自分なりの答えを出してからディスカッションに臨みます。</p>
+        <p>ディスカッションを通して、<span class="under">あるトピックに関して詳しくなれますし、他の人の意見を聞くことで、
+        自分にはなかった思考を取り入れることができ、一つの物事に対する考えがより深いものになります。</span>
         </p>
-        <h3>コロナ禍での活動</h3>
-        <p>
-        <h3>コロナ以前の活動</h3>
-        <p>
-        </p>
-        <h2>イベント</h2>
-        <h3>BFG</h3>
+        <h2>2 イベント</h2>
+        <h3>2.1 セクションキャンプ</h3>
         <p></p>
-        <h3>BPG</h3>
-        <p></p>
-        <h3>ガイドコンテスト</h3>
-        <p></p>
-        <h2>メンバー</h2>
-        <h3>英語系の学部の人が多い？</h3>
+        <h2>3. メンバー</h2>
+        <h3>3.1 英語系の学部の人が多い？</h3>
         <div id="chart_div" style="width: 500px; height: 350px"></div>
-        <p>
+        <p>2021年2月現在では、総合政策学部の子が1人所属しています。
+        人数が増えればディベートセクションの活動が再開できるので、新入生の皆様お待ちしております！
+        一緒にディベートセクションを盛り上げましょう！
         </p>
-        <h3>男女比は？</h3>
+        <h3>3.2 男女比は？</h3>
         <div id="chart_div1" style="width: 500px; height: 350px"></div>
-        <p>
+        <p>2021年2月現在では、女性が1人所属しています。南山大学ESSでは、男女問わずメンバーを募集しています！
         </p>
-        <h3>何年次が多い？</h3>
+        <h3>3.3 何年次が多い？</h3>
         <div id="chart_div2" style="width: 500px; height: 350px"></div>
-        <p>
+        <p>2021年2月現在では、2年生が1人所属しています。ESSは2年生が中心となって活動をしているため、
+        新入生にとっては、年の近い先輩が多いので話が弾みやすいと思います！
+        </p>
+        <h2>4. 最後に</h2>
+        <p>2021年2月現在では、ディベートセクションはメンバー不足により活動を一時休止しております。
+        <span class="bold">新入生の皆様の入部によって、ディスカッションセクションの活動が再開される可能性があります！</span>
+        ぜひ、この記事を読んでディスカッションセクションに興味を持ってくださった方は、以下のリンクから
+        体験申し込みを行ってください。ESSメンバー一同、皆様をお待ちしております！
+        </p>
+        <p><%= link_to '体験申し込みはこちらから', new_inquiry_path %>
         </p>
     </div>
     <!--メインここまで-->
@@ -178,9 +186,7 @@ function drawChart2() {
                 </ul>
                 <div class="side-letter"><a>2. イベント</a></div>
                 <ul>
-                    <a><li>2.1 BFG</li></a>
-                    <a><li>2.2 BPG</li></a>
-                    <a><li>2.3 ガイドコンテスト</li></a>
+                    <a><li>2.1 セクションキャンプ</li></a>
                 </ul>
                 <div class="side-letter"><a>3. メンバー</a></div>
                 <ul>
@@ -188,6 +194,7 @@ function drawChart2() {
                     <a><li>3.2 男女比は？</li></a>
                     <a><li>3.3　何年次が多い？</li></a>
                 </ul>
+                <div class="side-letter"><a>4. 最後に</a></div>
             </div>
           </div>
      </aside>

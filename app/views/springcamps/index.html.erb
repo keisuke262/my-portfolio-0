@@ -4,85 +4,50 @@
     <!--ここからメイン-->
     <div id="main" class="col-12 col-sm-8">
         <h1 class="text-center">春キャンプ</h1>
-        <div class="text-center mt-5"><%= image_tag 'Guide10', :width => '100%' %></div>
-        <p class="mt-4">2020年度 ESS春合宿（通称春キャン）は、2月10日〜12日の3日間で行われました！
-        ESSでは毎年セクション間の交流を深めるため、みんなで春キャンに行っています！内容としては宿泊先で会議室を借り、
-        主に英語を使ったアクティビティや他セクションの活動を体験を通して、普段はあまり関わりがない人との交流を深めています！
-        え？！合宿でも英語の勉強するの？！しかも3日間もやるの？大変じゃん！！と思われるかもしれません！たしかに疲れます。（笑）
-        しかし、スピーチ、ドラマ、ディベート、ガイド、ディスカッション、この5つから英語に触れることで言語が持つ無限の可能性を楽しさに気づくはずです！
-        また雰囲気は常にゆったりしていて、気を遣わずに過ごせることも特徴です！
-        加えて先輩が1人1人をしっかりサポートし、一緒になって活動してくれます！
-        ちなみに、2020年の春キャンは三重県賢島・伊勢志摩に行きました！！（今年の行く場所は異なる場合があります）
+        <div class="text-center mt-5"><%= image_tag 'spring', :width => '100%' %></div>
+        <p class="mt-4">2020年度 ESS春合宿（通称春キャン）は、<span class="bold">2月10日〜12日の3日間で行われました！</span>
+        ESSでは毎年セクション間の交流を深めるため、みんなで春キャンに行っています！</p>
+        <p>内容としては宿泊先で会議室を借りて、主に<span class="bold">英語を使ったアクティビティや他セクションの活動を体験を通して、
+        普段はあまり関わりがない人との交流を深めています！</span></p>
+        <p>え？！合宿でも英語の勉強するの？！しかも3日間もやるの？大変じゃん！！と思われるかもしれません！たしかに疲れます。（笑）
+        しかし、<span class="under">資格・ガイド・ディベート・ドラマ・スピーチ・ディスカッショの6つ
+        のセクションの観点から英語に触れることで,言語が持つ無限の可能性を楽しさに気づくはずです！</span>
+        </p>
+        <p>また雰囲気は常にゆったりしていて、気を遣わずに過ごせることも特徴です！
+        加えて<span class="bold">先輩が1人1人をしっかりサポートし、一緒になって活動してくれます！</span>
+        </p>
+        <p>2020年の春キャンは<span class="bold">三重県賢島・伊勢志摩に行きました！(※年によって行く場所は異なります)</span><br>
         端まで続く白い砂浜から眺める夕日は、見る人の心を打つものがありました！
-        また夜、買い出しにみんなで最寄りのコンビニまで30分歩いたことは一生忘れません！（笑）
-        いろいろと書きましたが、要するに、あなたがESSメンバーとして春キャンに参加すれば、
-       【先輩のサポートのもと、英語の楽しみ方を広げる事ができ、最高の仲間と最高の思い出を作る事が出来る！】ということです！
-        ご一読いただき、ありがとうございました！
+        </p>
+        <p>また、夜に買い出しにみんなで最寄りのコンビニまで30分歩いたことは一生忘れません！（笑）</p>
+        <p>いろいろと書きましたが、要するに、ESSメンバーとして春キャンに参加すれば、
+        <span class="under">【先輩のサポートのもと、英語の楽しみ方を広げる事ができ、最高の仲間と最高の思い出を作る事が出来る！】</span>
+        </p>
+        <p>ということです！</p>
+        <p>ご一読いただき、ありがとうございました！</p>
         </p>
     </div>
     <!--メインここまで-->
-    <!--ここからサイド-->
+    <!--サイドここから-->
     <aside id="sidebar" class="col-sm-4">
       <div id="sidebar_sub">
         <div class="card">
-            <div class="card-header">
-              目次
-            </div>
-            <div class="card-body">
-                <div class="side-letter"><a>1. 4月～7月のイベント</a></div>
-                <ul>
-                    <a><li>1.1 春キャン</li></a>
-                    <a><li>1.2 新歓</li></a>
-                    <a><li>1.3 上南戦</li></a>
-                </ul>
-                <div class="side-letter"><a>2. 8月～11月のイベント</a></div>
-                <ul>
-                    <a><li>2.1 サマーキャンプ</li></a>
-                    <a><li>2.2 ハロウィンパーティー</li></a>
-                    <a><li>2.3 学祭</li></a>
-                </ul>
-                <div class="side-letter"><a>3. 12月～3月のイベント</a></div>
-                <ul>
-                    <a><li>3.1 クリスマスパーティー</li></a>
-                    <a><li>3.2 追いコン</li></a>
-                    <a><li>3.3　追いコン</li></a>
-                </ul>
-            </div>
+          <div class="card-header">イベント一覧</div>
+          <div class="card-body">
+            <div class="active"><%= link_to '・春キャン', spring_camp_path, class: 'side-letter' %></div>
+            <div><%= link_to '・フレッシュマン祭', freshman_festival_path, class: 'side-letter' %></div>
+            <div><%= link_to '・新歓', freshman_welcome_party_path, class: 'side-letter' %></div>
+            <div><%= link_to '・上南戦', jounan_path, class: 'side-letter' %></div>
+            <div><%= link_to '・サマーキャンプ', summer_camp_path, class: 'side-letter' %></div>
+            <div><%= link_to '・ハロウィンパーティー', halloween_party_path, class: 'side-letter' %></div>
+            <div><%= link_to '・学祭', nanzan_festival_path, class: 'side-letter' %></div>
+            <div><%= link_to '・クリスマスパーティー', christmas_party_path, class: 'side-letter' %></div>
+            <div><%= link_to '・追いコン', farewell_party_path, class: 'side-letter' %></div>
           </div>
         </div>
-     </aside>
-    <!--サイドここまで-->
-    <!--ここからサイド-->
-    <aside id="sidebar" class="col-sm-4">
-      <div id="sidebar_sub">
-        <div class="card">
-            <div class="card-header">
-              イベント一覧
-            </div>
-            <div class="card-body">            
-                <div class="side-letter"><a>1. </a></div>
-                <ul>
-                    <a href="spring_camp_path" class="active"><li></li></a>
-                    <a href="freshman_welcome_party_path"><li></li></a>
-                    <a><li><%= link_to '', jounan_path %></li></a>
-                </ul>
-                <div class="side-letter"><a>2. 8月～11月のイベント</a></div>
-                <ul>
-                    <a><li><%= link_to '', summer_camp_path %></li></a>
-                    <a><li><%= link_to '2.2 ハロウィンパーティー', halloween_party_path  %></li></a>
-                    <a><li><%= link_to '2.3 学祭', nanzan_festival_path  %></li></a>
-                </ul>
-                <div class="side-letter"><a>3. 12月～3月のイベント</a></div>
-                <ul>
-                    <a><li><%= link_to '3.1クリスマスパーティー', christmas_party_path %></li></a>
-                    <a><li><%= link_to '3.2追いコン', farewell_party_path %></li></a>
-                    <a><li><%= link_to '3.3追いコン', farewell_party_path %></li></a>
-                </ul>
-            </div>
-       </div>
+      </div>
     </aside>
     <!--サイドここまで-->
-    
   </div>
  <!--wrapperここまで-->
  </div>

@@ -2,9 +2,10 @@
 <!--メイン写真-->
 <div class="webapp">
 <div class="topimg2 wow fadeIn" data-wow-duration="2s">
-  <h1 class="title">WAEDB</h1>
-  <p class="subtitle1">Improve your English skill</h2>
-  <p class="subtitle2"><%= link_to 'ログインはこちらから', login_path %></p>
+  <h1 class="title">NED</h1>
+  <p class="subtitle1">Improve your English skill</p>
+  <span class="signup-button"><%= link_to 'Signup', signup_path %></span>
+  <span class="login-button"><%= link_to 'Login', login_path %></span>
 </div>
 
 <div class="row app1">
@@ -12,7 +13,7 @@
     <%= image_tag 'english diary boy book', :width => '100%' %>
   </div>
   <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
-    <p class="after-picture"><span class="bold">WPEDB</span>は、 Web Application Based on English Diary Boy(著書 : 英語日記BOY, 著者 : 新井リオ)の略です。</p>
+    <p class="after-picture"><span class="bold">NED</span>はNanzan ESS Diary の略です。</p>
     <p>著書『英語日記BOY』の著者新井リオさんが提案する英語勉強法を更に効果的なものにしたいと考え、このWebアプリケーション開発を試みました。</p>
     <p>1番の目的は、<span class="bold">「新井さんが考える英語が話せる定義 = 今言いたいオリジナルフレーズが瞬時に出てくることをクリアすること、
     つまり、英語が話せるようになること」です。</span></p>
@@ -86,7 +87,7 @@
         <%= image_tag 'loginimage4', :width => '100%', class: 'img-top1' %>
     </div>
     <div class="col-sm-6 wow fadeInUp after-picture" data-wow-delay="0.8s" data-wow-duration="1s">
-        <p class="check">英語学習の目的が不明確。</p>
+        <p>1. 英語学習の目的が不明確。</p>
         <p>2. モチベーションが高い状態で保つことができない。</p>
         <p>3. アウトプットの機会(Speaking・Writing)の時間が圧倒的に少ない</p>
     </div>
@@ -98,30 +99,27 @@
         <%= image_tag 'loginimage2', :width => '100%', class: 'img-top2' %>
     </div>
     
-    <div class="col-sm-6 wow fadeInUp after-picture" data-wow-delay="0.8s" data-wow-duration="1s">
-        <p>1.  英語学習の目標を言語化し、それを<span class="under">宣言・共有しましょう。</span></p>
-        <p>2. <span class="under">英語とモチベーションに関する研究結果を提示します。また、アウトプットした量を数値で示し視覚化することで
+    <div class="col-sm-6 wow fadeInUp after-picture" data-wow-delay="0.6s" data-wow-duration="1s">
+        <p class="check">英語学習の目標を言語化し、それを<span class="under">宣言・共有しましょう。</span></p>
+        <p class="check"><span class="under">英語とモチベーションに関する研究結果を提示します。また、アウトプットした量を数値で示し視覚化することで
             前進する感覚をつけます。</span><br>** これは前進する感覚がモチベーション維持に有効であることを
             示した研究結果に基づいています。</p>
-        <p>3.<span class="under"> 学んだことを共有する環境を提供します。</span></p>
+        <p class="check"><span class="under"> 学んだことを共有する環境を提供します。</span></p>
     </div>
 </div>
 
 <div class="row app6">
     <h1 class="text-center col-12">Function</h1>
-    <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+    <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
         <%= image_tag 'loginimage4', :width => '100%', class: 'img-top3' %>
     </div>
-    <div class="col-sm-6 wow fadeInUp after-picture" data-wow-delay="0.8s" data-wow-duration="1s">
-        <p>1. <span class="under">研究結果の共有と閲覧機能</span></p>
-        <p>2. <span class="under">アウトプットした量を視覚化する機能</span></p>
-        <p>3. 長期記憶に関する研究に沿った復習タイミングお知らせ機能</span></p>
-        <p>4. 学んだことと英語学習の目標を<span class="under">共有するための投稿機能</span></p>
-        <p>5. 他の人の投稿に対する<span class="under">いいね機能</span></p>
+    <div class="col-sm-6 wow fadeInUp after-picture" data-wow-delay="0.6s" data-wow-duration="1s">
+        <p class="check"><span class="under">英語学習に役立つ研究結果の閲覧機能</span></p>
+        <p class="check"><span class="under">アウトプットした量を視覚化する機能</span></p>
+        <p class="check">長期記憶に関する研究に沿った<span class="under">復習タイミングお知らせ機能</span></p>
+        <p class="check">オリジナルフレーズを<span class="under">共有するための投稿機能</span></p>
+        <p class="check">他の人の投稿に対する<span class="under">いいね機能</span></p>
     </div>
-</div>
-<div class="row">
-  <p class="nav-item login-nav"><%= link_to 'ログイン', login_path, class: 'nav-link' %></p>
 </div>
 
 </div>

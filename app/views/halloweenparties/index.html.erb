@@ -1,30 +1,31 @@
-
  <div class="container" id="content_border">
- <!--wrapperここから-->
-<div id="wrapper" class="row">
+  <!--wrapperここから-->
+   <div id="wrapper" class="row">
     <!--ここからメイン-->
     <div id="main" class="col-12 col-sm-8">
         <h1 class="text-center">ハロウィンパーティー</h1>
-        <div class="main-background-action">
-        
-            <h2>ハロウィンパーティーとは？</h2> 
-           <%= image_tag 'halloween2' %><!--集合写真を貼る--> 
-        </div>
-        
-        <p class="writing"><span class="bold">ハロウィンパーティーでは、各々仮装して参加します。</span>動物やかぼちゃ、デビルの被り物、そしてゾンビメイクをしたり
-            コスチュームを着たりします!</span><span class="red">お菓子を食べながらおしゃべりをしたり、クイズ大会やビンゴ大会もします！</span>クイズやビンゴ大会では
-            景品が用意されていて、皆景品Getを目指してゲームを楽しみます！<br>ちなみに<span class="bold">2019年のクイズ大会では「国旗クイズ」をしました。</span>
-            また、他のセクションの人たちとも会話で来て、交流を深めることができます！
-            最後に<span class="red">誰の仮装が素晴らしかったかを投票で決めます。</span>なんと一番多く票を勝ち取った人には景品が渡されます！
-            <span class="bold">ぜひハロウィンパーティーに参加して、普段できない仮装を楽しんでほしいと思います！</span>
-        </p>　
-        <p class="text-center">ハロウィンパーティーの様子</p> 
-        <%= image_tag 'halloween5' %>
+        <div class="text-center mt-5"><%= image_tag 'halloween', :width => '100%' %></div>
+        <p class="mt-4">ハロウィンパーティーでは、<span class="bold">各々仮装して参加します。</span>
+        </p>
+        <p><span class="bold">動物やかぼちゃ、デビルの被り物、そしてゾンビメイクをしたりスチュームを着たりします!</span>
+        <br>また、お菓子を食べながらおしゃべりをしたり、<span class="bold">クイズ大会やビンゴ大会もします！</span>
+        </p>
+        <p>クイズやビンゴ大会では<span class="bold">景品が用意されていて</span>、
+        皆景品Getを目指してゲームを楽しみます！<br>ちなみに2019年のクイズ大会では<span class="bold">「国旗クイズ」</span>
+        をしました。
+        </p>
+        <p>また、<span class="bold">他のセクションの人たちとも会話で来て、交流を深めることができます！</span>
+        </p>
+        <p><span class="under">ハロウィンパーティーの最後には、誰の仮装が素晴らしかったかを投票で決めます。</span>
+        <br>なんと一番多く票を勝ち取った人には景品が渡されます！
+        </p>
+        <p><span class="bold">ぜひハロウィンパーティーに参加して、普段できない仮装を楽しんでほしいと思います！</span>
+        <p>ご一読いただき、ありがとうございました！</p>
     </div>
     <!--メインここまで-->
     <!--ここからサイド-->
     <aside id="sidebar" class="col-sm-4">
-     <div id="sidebar_sub">
+      <div id="sidebar_sub">
         <div class="card">
             <div class="card-header">
               イベント一覧
@@ -40,9 +41,17 @@
                 <div><%= link_to '・追いコン', farewell_party_path, class: 'side-letter' %></div>
             </div>
         </div>
-     </aside>
+      </div>
+    </aside>
     <!--サイドここまで-->
-</div>
+  </div>
  <!--wrapperここまで-->
 </div>
 <!--containerここまで-->
+
+
+
+
+
+
+

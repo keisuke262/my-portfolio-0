@@ -1,52 +1,59 @@
-
- <!--wrapperここから-->
-<div id="wrapper" class="row">
-    <!--ここからメイン-->
-    <div id="main" class="col-12 col-sm-8">
-        <h1 class="text-center">クリスマスパーティー</h1>
-        <div class="text-center mt-5"><%= image_tag 'Guide10', :width => '100%' %></div>
-        <p class="mt-4">
-        
-
-
-ESSのクリスマスパーティーでは、セクションも学年もごちゃまぜでチーム編成を行い、チームでゲームを行います！目玉イベントは、
-クリスマスケーキのデコレーション大会です🎂クリパの開催前から、チームでどのようなデコレーションを行うかを話し合い、
-クリパ当日はチームメンバーとの買い出しからスタートします。各グループ、気合を入れてデコレーションを行うので、順位発表は大盛り上がりです！
-もちろんケーキはみんなで分け合いながら和気あいあいと食べますよ😊また、プレゼント交換も行います！設定金額を決め、各々クリパ開催前にプレゼントを買ってきます。
-クリスマスソングとともに交換を行います。このような感じで、ESSのクリパではクリスマスを存分に満喫できますよ！
-また、他セクションの人や先輩、後輩とも仲良くなれる非常にいいイベントです◎
-        
-
-
-
-        </p>
-    </div>
-    <!--メインここまで-->
-    <!--ここからサイド-->
-    <aside id="sidebar" class="col-sm-4">
-     <div id="sidebar_sub">
-        <div class="card">
-            <div class="card-header">
-              イベント一覧
-            </div>
-            <div class="card-body">
-                <div><%= link_to '・春キャン', spring_camp_path, class: 'side-letter' %></div>
-                <div><%= link_to '・新歓', freshman_welcome_party_path, class: 'side-letter' %></div>
-                <div><%= link_to '・上南戦', jounan_path, class: 'side-letter' %></div>
-                <div><%= link_to '・サマーキャンプ', summer_camp_path, class: 'side-letter' %></div>
-                <div><%= link_to '・ハロウィンパーティー', halloween_party_path, class: 'side-letter' %></div>
-                <div><%= link_to '・学祭', nanzan_festival_path, class: 'side-letter' %></div>
-                <div class="active"><%= link_to '・クリスマスパーティー', christmas_party_path, class: 'side-letter' %></div>
-                <div><%= link_to '・追いコン', farewell_party_path, class: 'side-letter' %></div>
-            </div>
+<div class="container" id="content_border">
+    <!--wrapperここから-->
+    <div id="wrapper" class="row">
+        <!--ここからメイン-->
+        <div id="main" class="col-12 col-sm-8">
+            <h1 class="text-center">クリスマスパーティー</h1>
+            <div class="text-center mt-5"><%= image_tag 'party1', :width => '100%' %></div>
+            <p class="mt-4">クリスマスパーティーでは、<span class="bold">セクションも学年もごちゃまぜでチーム編成を行い、
+            チームでゲームを行います！</span></p>
+            <p>目玉イベントは、<span class="under">クリスマスケーキのデコレーション大会です！</span>
+            <br>クリスマスパーティーの開催前から、チームでどのようなデコレーションを行うかを話し合い、
+            <span class="bold">クリスマスパーティー当日はチームメンバーとの買い出しからスタートします。</span>
+            </p>
+            <p>各グループ、気合を入れてデコレーションを行うので、順位発表は大盛り上がりです！
+            もちろんケーキはみんなで分け合いながら和気あいあいと食べますよ！
+            </p>
+            <p>また、<span class="under">プレゼント交換</span>も行います！
+            設定金額を決め、各々クリパ開催前にプレゼントを買ってきます。
+            そしてクリスマスパーティー当日にクリスマスソングとともに交換を行います。
+            </p>
+            <p>このような感じで、<span class="bold">ESSのクリパではクリスマスを存分に満喫できますよ！</span>
+            また、<span class="under">他セクションの人や先輩、後輩とも仲良くなれる非常にいいイベントです</span>
+            </p>
+            <p>ご一読いただき、ありがとうございました！</p>
         </div>
-     </aside>
-    <!--サイドここまで-->
+        <!--メインここまで-->
+        <!--ここからサイド-->
+        <aside id="sidebar" class="col-sm-4">
+            <div id="sidebar_sub">
+                <div class="card">
+                    <div class="card-header">イベント一覧</div>
+                    <div class="card-body">
+                        <div><%= link_to '・春キャン', spring_camp_path, class: 'side-letter' %></div>
+                        <div><%= link_to '・フレッシュマン祭', freshman_festival_path, class: 'side-letter' %></div>
+                        <div><%= link_to '・新歓', freshman_welcome_party_path, class: 'side-letter' %></div>
+                        <div><%= link_to '・上南戦', jounan_path, class: 'side-letter' %></div>
+                        <div><%= link_to '・サマーキャンプ', summer_camp_path, class: 'side-letter' %></div>
+                        <div><%= link_to '・ハロウィンパーティー', halloween_party_path, class: 'side-letter' %></div>
+                        <div><%= link_to '・学祭', nanzan_festival_path, class: 'side-letter' %></div>
+                        <div class="active"><%= link_to '・クリスマスパーティー', christmas_party_path, class: 'side-letter' %></div>
+                        <div><%= link_to '・追いコン', farewell_party_path, class: 'side-letter' %></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--サイドここまで-->
+    </div>
+    <!--wrapperここまで-->
 </div>
- <!--wrapperここまで-->
+<!--containerここまで-->
 
 
 
+
+
+        
 
 
 

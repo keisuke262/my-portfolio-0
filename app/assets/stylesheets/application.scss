@@ -32,9 +32,13 @@
    //max-width: 1300px;
    // webapplicationの都合でmin-widthを1000～1026に変更
    min-width: 1000px;
-   font-size: 2.2rem;
+   font-size: 25px;
    font-family: Noto, "Hiragino Sans", Helvetica, Arial, sans-serif, 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック'
    ,YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+ }
+
+ p {
+   margin-bottom: 60px;
  }
 
  /*
@@ -123,7 +127,7 @@ main {
 @media only screen and (min-width: 576px) {
   // ウィンドウ幅が576px以上の時に適用される
   .navbar-expand-sm .navbar-nav .nav-link {
-    margin-right: 4.1rem;
+    margin-right: 40px;
     margin-left: 0.1rem;
     padding: 0 0.1rem;
   }
@@ -149,12 +153,29 @@ main {
 
 }
 
-p {
-  line-height: 1.9;
-  margin-bottom: 40px;
-  font-size: 2.2rem;
-  padding: 0 20px;
+@media only screen and (min-width: 0px) {
+  p {
+    line-height: 1.9;
+    margin-bottom: 40px;
+    font-size: 30px;
+    padding: 0 20px;
+  
+  }
+
 }
+
+@media only screen and (min-width: 576px) {
+
+  p {
+    line-height: 1.9;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    padding: 0 20px;
+  
+  }
+
+}
+
 
 .container h1 {
   margin-top: 4rem;
@@ -378,9 +399,25 @@ h3 {
   font-weight: 600;
 }
 
-.event .card-title {
-  font-weight: 600;
+@media only screen and (min-width: 0px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .event .card-title {
+    font-weight: 600;
+    font-size: 25px;
+  
+  }
 }
+
+@media only screen and (min-width: 576px) {
+  // ウィンドウ幅が0px以上の時に適用される
+  .event .card-title {
+    font-weight: 600;
+    font-size: 20px;
+  
+  }
+}
+
+
 
 .button-position {
   margin-left: 10px;
@@ -556,6 +593,7 @@ li {
   // ウィンドウ幅が0px以上の時に適用される
  .like-button .btn  {
    font-size: 20px;
+   border-radius: 25px;
  }
 }
 
@@ -563,6 +601,7 @@ li {
   // ウィンドウ幅が576px以上の時に適用される
  .like-button .btn {
    font-size: 20px;
+   border-radius: 25px;
  }
 }
 
@@ -570,6 +609,7 @@ li {
   // ウィンドウ幅が0px以上の時に適用される
  .user-top .btn  {
    font-size: 23px;
+   border-radius: 25px;
  }
 }
 
@@ -577,6 +617,7 @@ li {
   // ウィンドウ幅が576px以上の時に適用される
  .user-top .btn {
    font-size: 20px;
+   border-radius: 25px;
  }
 }
 
@@ -880,12 +921,14 @@ li {
 
   }
  }
+
  @media only screen and (max-width: 568px) {
    main {
      font-size: 5em
    }
    .footer-list-top {
-     width: 100%
+     width: 44%;
+     margin-right: -100px;
    }
    .footer-list-header {
      font-size: 2rem;
@@ -1695,6 +1738,10 @@ h3 {
   background: linear-gradient(transparent 75%, #f2dd92 0%)
 }
 
+.under1 {
+  background: linear-gradient(transparent 75%, aqua 0%)
+}
+
 // タイトル付きの枠で囲う設定 
 
 .box {
@@ -1733,6 +1780,32 @@ h3 {
 }
 
 .box1 p {
+  margin: 0; 
+  padding: 0;
+}
+
+// 囲いの中にワンフレーズ
+
+.box2 {
+  position: relative;
+  margin: 2em 0;
+  padding: 25px 10px 7px;
+  border: solid 2px #FFC107;
+}
+.box2 .box-title2 {
+  position: absolute;
+  display: inline-block;
+  top: -2px;
+  left: -2px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #FFC107;
+  color: #ffffff;
+  font-weight: bold;
+}
+.box2 p {
   margin: 0; 
   padding: 0;
 }
@@ -2039,10 +2112,13 @@ h3 {
 
 .signup {
   margin-top: 3rem;
+  border-radius: 50px;
+
 }
 
 .login-button {
   margin-top: 3rem;
+  border-radius: 50px;
 }
 
 .username {
@@ -2092,6 +2168,7 @@ h3 {
 @media only screen and (min-width: 0px) {
   .edit .btn {
     font-size: 20px;
+    border-radius: 25px;
   }
 }
 
@@ -2100,6 +2177,7 @@ h3 {
   .edit .btn {
     font-size: 18px;
     margin-left: 30px;
+    border-radius: 25px;
   }
 }
 
@@ -2482,7 +2560,7 @@ h3 {
 @media only screen and (min-width: 0px) {
   //　スマホ縦用
   .form-control{
-    font-size: 30px;
+    font-size: 21px;
   }
 }
 
@@ -2684,35 +2762,332 @@ h3 {
 
 }
 
-/*
+// SignUpとLoginのおしゃれなボタン
+
+
 @media only screen and (min-width: 0px) {
   //　スマホ縦用
-  .container h1{
-    margin-top: -100px;
+  .signup-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 7%;
+    right: 2%;
+  }
+  
+  .signup-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
+  }
+  
+  
+  .login-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+  }
+  
+  .login-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
   }
 }
 
 @media only screen and (min-width: 576px) {
   //　スマホ横用
-  .container h1{
-    margin-top: -100px;
+  .signup-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+  }
+  
+  .signup-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
+  }
+  
+  
+  .login-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 15%;
+    right: 2%;
+  }
+  
+  .login-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
   }
 }
 
 
 
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   //　タブレット用
-  .container h1{
-    margin-top: -100px;
+  .signup-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+  }
+  
+  .signup-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
+  }
+  
+  
+  .login-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 8%;
+    right: 2%;
+  }
+  
+  .login-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
   }
 }
 
 @media only screen and (min-width: 1025px) {
   // PC用
-  .container h1 {
-    margin-top: -100px;
+  .signup-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+  }
   
+  .signup-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
+  }
+  
+  
+  .login-button a {
+    background-color: #139CFF;
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border-radius: 40%;
+    display: inline-block;
+    font-family: helvetica;
+    border: none;
+    transition: background-color .5s, color .5s linear, border-radius 2s ease-out;
+    position: fixed;
+    bottom: 15%;
+    right: 2%;
+  }
+  
+  .login-button a:hover {
+    background-color: #35EC5C;
+    color: black;
+    border-radius: 100%;
+  }
+}
+
+// toppageのイベントのカードの設定
+
+/*
+
+.event .card-deck{
+  width:300px;
+  margin:0 auto;
+  padding:2em;
+  background:#fff;
+  border:#ddd 5px solid;
+  border-radius:10px;
+}
+
+.event .card-deck img{
+  width:100%;
+  height:auto;
+  border-radius:30px 0;
+}
+
+.event .card-deck span{
+  display:inline-block;
+  margin:1em 0 0 0;
+  background:gold;
+  font-size:12px;
+  padding:.5em 1em;
+  border-radius:.5em;
+}
+
+.event .card-deck h5{
+  margin:1em 0;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.event .card-deck p{
+  line-height:1.6;
+}
+
+.event .card-deck a{
+  display:block;
+  height:50px;
+  margin:1em 0;
+  line-height:50px;
+  background:tomato;
+  color:#fff;
+  border-radius:25px;
+  box-shadow:0 5px 0 gold;
+  text-decoration:none;
+  text-align:center;
 }
 */
+@media only screen and (min-width: 0px) {
+  //　スマホ用
+
+  .event .card {
+    border-radius: 20px;
+  }
+
+  .event img {
+    border-radius: 50px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+  
+  .month {
+    display: inline-block;
+    margin: 1em 0px 0 12px;
+    background: white;
+    font-size: 22px;
+    padding: .5em 1em;
+    border-radius: .5em;
+  
+  }
+  
+  .readmore {
+    display: block;
+    height: 50px;
+    margin: 20px auto;
+    line-height: 50px;
+    background: tomato;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 gold;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+  }
+  }
+
+
+
+@media only screen and (min-width: 576px) {
+  //　タブレット以上用
+  .event .card {
+    border-radius: 10px;
+  }
+
+  .event img {
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+  
+  
+  .month {
+    display: inline-block;
+    margin: 1em 0px 0 12px;
+    background: white;
+    font-size: 15px;
+    padding: .5em 1em;
+    border-radius: .5em;
+  
+  }
+  
+  .readmore {
+    display: block;
+    height: 50px;
+    margin: 20px auto;
+    line-height: 50px;
+    background: tomato;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 gold;
+    text-decoration: none;
+    text-align: center;
+    width: 150px;
+  }
+  }
+
+  .eventtitle {
+    margin-top: 70px;
+  }
+
+  
+

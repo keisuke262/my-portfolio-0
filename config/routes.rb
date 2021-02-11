@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'speech-section', to: 'speechsections#index'
   get 'discussion-section', to: 'discussionsections#index'
   get 'spring-camp', to: 'springcamps#index'
+  get 'freshman-festival', to: 'freshmanfestivals#index'
   get 'freshman-welcome-party', to: 'freshmanwelcomeparties#index'
   get 'jounan', to: 'jounans#index'
   get 'summer-camp', to: 'summercamps#index'

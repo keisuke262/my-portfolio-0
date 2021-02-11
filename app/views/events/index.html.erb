@@ -1,1 +1,104 @@
-<h1>イベント一覧</h1>
+
+<div id="wrapper">
+    <!--ここからメイン-->
+    <div id="main">
+        <div class="event">
+            <h5 class="text-center mb-5 event-title eventtitle">全体のイベント一覧</h5>
+                <div class="card-deck mt-5">
+                    <div class="card text-white bg-warning mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+                            <%= link_to spring_camp_path do %>
+            <%= image_tag 'spring', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">春キャンプ</h5>
+                <p class="card-text text-center pt-4 pb-3">春の長期休暇に、ESS全体で2泊3日で旅行に行きます。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+    <div class="card text-white bg-success mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to freshman_festival_path do %>
+            <%= image_tag 'hureman', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">フレッシュマン祭</h5>
+                <p class="card-text text-center pt-4 pb-3">4月に新入生を対象にメンバー募集活動を行います。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+    <div class="card text-white bg-primary mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to freshman_welcome_party_path do %>
+            <%= image_tag 'shinkan', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">新歓</h5>
+                <p class="card-text text-center pt-3 pb-3">5月上旬に新入生歓迎パーティーを開きます。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+</div>
+<div class="card-deck mt-5">
+    <div class="card text-white bg-danger mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to jounan_path do %>
+            <%= image_tag 'jounan', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">上南戦</h5>
+                <p class="card-text text-center pt-4 pb-4">5月中旬に姉妹校である上智大学と交流会開きます。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+    <div class="card text-white bg-warning mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to summer_camp_path do %>
+            <%= image_tag 'halloween', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">サマーキャンプ</h5>
+                <p class="card-text text-center pt-4 pb-4">夏の長期休暇にESS全体で2泊3日で旅行に行きます。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+    <div class="card text-white bg-info mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to halloween_party_path do %>
+            <%= image_tag 'halloween', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">ハロウィンパーティー</h5>
+                <p class="card-text text-center pt-4 pb-4">10月末に南山大学構内でハロウィンパーティーをします。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+</div>
+<div class="card-deck mt-5">
+    <div class="card text-white bg-warning mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to nanzan_festival_path do %>
+            <%= image_tag 'gakusai', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">学祭</h5>
+                <p class="card-text text-center pt-4 pb-4">11月上旬に南山大学構内で学祭が行われます。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+    <div class="card text-white bg-success mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to christmas_party_path do %>
+            <%= image_tag 'cake', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">クリスマスパーティー</h5>
+                <p class="card-text text-center pt-4 pb-4">12月下旬に南山大学構内でクリスマスパーティーをします。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+    <div class="card text-white bg-primary mb-3 shadow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+        <%= link_to farewell_party_path do %>
+            <%= image_tag 'oikon', class: 'card-img-top' %>
+            <div class="card-body">
+                <h5 class="card-title text-center border-bottom pt-4 pb-4">追いコン</h5>
+                <p class="card-text text-center pt-4 pb-4">3月下旬に4年生の先輩方を送る会を開きます。</p>
+                <span class="readmore">Read More</span>
+            </div>
+        <% end %>
+    </div>
+</div>
+</div>
+</div>

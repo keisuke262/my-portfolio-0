@@ -1,15 +1,15 @@
   <ul class="list-unstyled">
       <% posts.each do |post| %>
         <li class="mb-3 row post-border">
-          <div class="col-3 offset-1 col-md-3 offset-sm-0">
+          <div class="col-3 offset-1 col-md-3 offset-sm-0 col-lg-4 ">
             <% if post.user.image? %>
               <%= image_tag post.user.image.url %>
             <% else %>
               <%= image_tag "/assets/default.jpg" %>
             <% end %>
           </div>
-          <div class="col-7 col-md-9">
-            <span class="username"><%= post.user.name %></span><span class="text-muted ml-3">posted at <%= post.created_at %></span>
+          <div class="col-7 col-md-9 col-lg-8">
+            <span class="username"><%= link_to post.user.name, user_path(post.user)%></span><span class="text-muted ml-3">posted at <%= post.created_at %></span>
         
             <p class="black post-content"><%= post.content %><br></p>
     

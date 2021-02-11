@@ -25,6 +25,9 @@
     <li><%= link_to spring_camp_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
     春キャンプ
     <% end %></li>
+    <li><%= link_to freshman_festival_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
+    フレッシャマン祭
+    <% end %></li>
     <li><%= link_to freshman_welcome_party_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>
     新歓
     <% end %></li>
@@ -50,28 +53,15 @@
   <ul class="footer-list-top">
     <li id='help'>
       <h4 class="footer-list-header">セクション体験</h4></li>
-    <li><%= link_to new_inquiry_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>お問い合わせ<% end %></li>
+    <li><%= link_to new_inquiry_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>体験申し込み<% end %></li>
     <li><%= link_to section_test_path, class: 'generic-anchor footer-list-anchor',itemprop: 'significantLink' do %>適正セクション診断<% end %></li>
-  </ul>
-  <ul class="footer-list-top">
-    <li id='help'>
-      <h4 class="footer-list-header">大会実績</h4></li>
-    <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor" itemprop="significantLink">1(Drama)</a></li>
-    <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">2(Drama)</a></li>
-    <li id='find-a-store'><a href='/shop/store-locator' class="generic-anchor footer-list-anchor" itemprop="significantLink">3(Drama)</a></li>
-    <li id='user-registration'><a href='/shop/user-registration?URL=' class="generic-anchor footer-list-anchor" itemprop="significantLink">1(Debate)</a></li>
-    <li id='order-tracking'><a href='/shop/order-status' itemprop="significantLink" class="generic-anchor footer-list-anchor">2(Debate)</a></li>
   </ul>
   <ul class="footer-list-top">
     <li>
       <h4 class="footer-list-header">サークル概要</h4></li>
     <li><a href='/' class="generic-anchor footer-list-anchor">南山大学ESSとは</a></li>
   </ul>
-  <ul class="footer-list-top">
-    <li>
-      <%= image_tag 'logo3.1'%><span class="ml-4">NanzanUniversity ESS</span>
-    </li>
-  </ul>
+  
   
   <section class="footer-social-section flex-rw">
       <span class="footer-social-overlap footer-social-connect">

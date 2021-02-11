@@ -3,10 +3,10 @@
 <!--wrapperここから-->
 <div id="wrapper" class="row">
     <!--ここからメイン-->
-    <div id="main" class="col-12 col-sm-8">
+    <div id="main" class="col-10 offset-1">
         
-        <h1 class="mt-4 pb-6 pt-6 text-center">お問い合わせ</h1>
-        <p class="mt-4 text-center">お問い合わせの内容は、受付日から3営業日以内をめどにご返信いたします。</p>
+        <h1 class="mt-4 pb-6 pt-6 text-center">体験申し込み</h1>
+        <p class="mt-4 text-center">以下の内容は、受付日から3営業日以内をめどにご返信いたします。</p>
         <!--formのaction属性でformの送信先を指定している-->
         <!--modelで指定した今回でいうと@inquiryのinquiriesがactionに指定されることになる-->
         <%= form_with model: @inquiry do |f| %>
@@ -74,24 +74,8 @@
         <% end %>
     </div>
     <!--メインここまで-->
-    <!--ここからサイド-->
-    <aside id="sidebar" class="col-sm-4">
-     <div id="sidebar_sub">
-        <div class="card">
-            <div class="card-header">
-                各セクション情報を確認する
-            </div>
-            <div class="card-body">
-                <div><%= link_to '・Certificationセクション', certification_section_path, class: 'side-letter' %></div>
-                <div><%= link_to '・Guideセクション', guide_section_path, class: 'side-letter' %></div>
-                <div><%= link_to '・Debateセクション', debate_section_path, class: 'side-letter' %></div>
-                <div><%= link_to '・Dramaセクション', drama_section_path, class: 'side-letter' %></div>
-                <div><%= link_to '・Speechセクション', speech_section_path, class: 'side-letter' %></div>
-                <div><%= link_to '・Discussionセクション', discussion_section_path, class: 'side-letter' %></div>
-            </div>
-        </div>
-     </aside>
-    <!--サイドここまで-->
+    
+    
     
 </div>
  <!--wrapperここまで-->
